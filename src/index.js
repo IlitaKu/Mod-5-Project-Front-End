@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import API from "./adapters/API";
-class App extends React.Component {
-  render() {
-    const { get_recipes } = this.props;
-    return <div></div>;
-  }
-}
+import App from "./App";
+import { BrowserRouter, Route } from "react-router-dom";
+import "./App.css";
 
-ReactDOM.render(<App />, document.querySelector("#root"));
-ß;
+ReactDOM.render(
+  <BrowserRouter>
+    <Route path="*" component={App} />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
