@@ -19,7 +19,7 @@ const SignUp = props => {
         history.push("/recipes");
       })
 
-      .catch(errors => {
+      .catch(error => {
         console.log(errors);
         setErrors(errors);
       });

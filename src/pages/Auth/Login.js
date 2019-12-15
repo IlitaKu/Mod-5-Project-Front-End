@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Login = props => {
   const [email, setEmail] = useState(" ");
   const [password, setPassword] = useState(" ");
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState(false);
   let history = useHistory();
 
   const handleSubmit = e => {
@@ -20,13 +20,15 @@ const Login = props => {
 
       .catch(errors => {
         console.log(errors);
-        setErrors(errors);
+        setErrors(true);
       });
   };
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <h6>{errors.join()}</h6>
+        {errors && (
+          <div style={{ color: `red` }}>Email or password incorrect</div>
+        )}
         <input
           type="email"
           placeholder="Email"
