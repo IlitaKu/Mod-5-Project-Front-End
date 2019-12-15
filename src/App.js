@@ -5,6 +5,7 @@ import Paths from "./Paths";
 import API from "./adapters/API";
 import Home from "./containers/Home";
 import Recipe from "./components/Recipe";
+import SignUp from "./pages/Auth/SignUp";
 function App({ history }) {
   const [user, setUser] = useState(null);
 
@@ -40,6 +41,7 @@ function App({ history }) {
         <Redirect to={Paths.LOGIN} />
       )}
       <Route path="/recipe/:id" component={Recipe} />
+      <Route path="/users" component={SignUp} />
     </div>
   );
 }

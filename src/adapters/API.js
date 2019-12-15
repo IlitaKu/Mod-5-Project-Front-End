@@ -30,6 +30,21 @@ const login = userDetails =>
       return data.user;
     });
 
+const signup = userDetails =>
+  fetch(SIGNUP_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({ user: userDetails })
+  })
+    .then(jsonfy)
+    .then(data => {
+      localStorage.setItem("token", data.token);
+      return data.user;
+    });
+
 const validate = () =>
   fetch(VALIDATE_URL, {
     headers: {
@@ -47,7 +62,8 @@ const logout = () => {
 export default {
   login,
   validate,
-  logout
+  logout,
+  signup
 };
 
 // get ingredients for recipe
