@@ -1,4 +1,5 @@
 export default {
   LOGIN: "/auth/login",
-  RECIPE: "/recipes"
+  RECIPE: "/recipes",
+  INSTRUCTIONS: "/instructions"
 };

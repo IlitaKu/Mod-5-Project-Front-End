@@ -3,7 +3,8 @@ import { Route, Redirect } from "react-router-dom";
 import Auth from "./pages/Auth";
 import Paths from "./Paths";
 import API from "./adapters/API";
-
+import Home from "./containers/Home";
+import Recipe from "./components/Recipe";
 function App({ history }) {
   const [user, setUser] = useState(null);
 
@@ -33,14 +34,12 @@ function App({ history }) {
       />
       {user ? (
         <>
-          <Route
-            path="/recipes"
-            render={routerProps => <div>new recipe</div>}
-          />
+          <Route path="/recipes" render={routerProps => <Home />} />
         </>
       ) : (
         <Redirect to={Paths.LOGIN} />
       )}
+      <Route path="/recipe/:id" component={Recipe} />
     </div>
   );
 }

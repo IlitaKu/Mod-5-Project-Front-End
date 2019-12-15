@@ -2,6 +2,7 @@ const API_ENDPOINT = "http://localhost:3000/api/v1/";
 const LOGIN_URL = `${API_ENDPOINT}login`;
 const SIGNUP_URL = `${API_ENDPOINT}users`;
 const VALIDATE_URL = `${API_ENDPOINT}validate`;
+const SAVE_RECIPE = `${API_ENDPOINT}recipes`;
 
 const jsonfy = res => {
   if (!res.ok) throw res;
@@ -10,6 +11,9 @@ const jsonfy = res => {
     else return data;
   });
 };
+// const authHeader = () => {
+//     Authorisation: localStorage.token
+// }
 
 const login = userDetails =>
   fetch(LOGIN_URL, {
@@ -46,7 +50,12 @@ export default {
   logout
 };
 
-// const API_KEY = "?apiKey=3350d3f0b0614e2eaeedb34fcadd6c05";
+// get ingredients for recipe
+// https://api.spoonacular.com/recipes/324694/analyzedInstructions
+
+// api request for pictures https://spoonacular.com/recipeImages/107878-556x370.jpg
+
+// const API_KEY = "apiKey=3350d3f0b0614e2eaeedb34fcadd6c05";
 
 // // const get_recipes = "https://api.spoonacular.com/recipes/search" + API_KEY;
 // // Search recipe by ingredient

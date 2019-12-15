@@ -34,7 +34,6 @@ const Login = props => {
       />
       <input
         type="password"
-        placeholder="Password"
         name="password"
         value={password}
         onChange={e => setPassword(e.target.value)}
