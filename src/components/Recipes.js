@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Recipes = props => (
+const Recipes = ({ recipes, user }) => (
   <div className="container">
     <div className="grid">
-      {props.recipes.map(recipe => {
+      {recipes.map(recipe => {
         return (
           <div
             key={recipe.id}
@@ -29,7 +29,7 @@ const Recipes = props => (
                 <Link
                   to={{
                     pathname: `/recipe/${recipe.id}`,
-                    state: { recipe: recipe.id }
+                    state: { recipe: recipe.id, user: user.id }
                   }}
                 >
                   View Recipe

@@ -66,6 +66,7 @@ export default {
   signup
 };
 
+//  get a sponacular api form "http://localhost:3000/api/v1/user_recipes/:id "
 // get ingredients for recipe
 // https://api.spoonacular.com/recipes/324694/analyzedInstructions
 

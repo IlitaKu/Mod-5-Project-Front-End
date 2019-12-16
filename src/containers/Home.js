@@ -25,10 +25,12 @@ class Home extends Component {
     console.log(this.state.recipes);
   };
   render() {
+    const { user } = this.props;
+    console.log("home", user);
     return (
       <div>
         <SearchForm getRecipe={this.getRecipe} />
-        <Recipes recipes={this.state.recipes} />
+        <Recipes recipes={this.state.recipes} user={user} />
       </div>
     );
   }

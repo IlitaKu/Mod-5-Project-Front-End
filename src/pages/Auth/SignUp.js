@@ -4,9 +4,9 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const SignUp = props => {
-  const [email, setEmail] = useState(" ");
-  const [password, setPassword] = useState(" ");
-  const [name, setName] = useState(" ");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [errors, setErrors] = useState([]);
   let history = useHistory();
 
@@ -45,6 +45,7 @@ const SignUp = props => {
         <input
           type="password"
           name="password"
+          placeholder="Password"
           value={password}
           onChange={e => setPassword(e.target.value)}
         />

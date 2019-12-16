@@ -35,7 +35,7 @@ function App({ history }) {
       />
       {user ? (
         <>
-          <Route path="/recipes" render={routerProps => <Home />} />
+          <Route path="/recipes" render={routerProps => <Home user={user} />} />
         </>
       ) : (
         <Redirect to={Paths.LOGIN} />

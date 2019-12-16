@@ -4,20 +4,39 @@ import { Link } from "react-router-dom";
 const API_KEY = "apiKey=3350d3f0b0614e2eaeedb34fcadd6c05";
 class Recipe extends React.Component {
   state = {
-    shownRecipe: []
+    shownRecipe: [],
+    userId: [],
+    recipeId: []
   };
+
   componentDidMount = async () => {
+    const user = this.props.location.state.user;
     const id = this.props.location.state.recipe;
     const req = await fetch(
       `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&${API_KEY}`
     );
     const res = await req.json();
     this.setState({ shownRecipe: res });
+    this.setState({ userId: user });
+    this.setState({ recipeId: id });
   };
 
   render() {
-    const saveRecipe = id => {
-      //
+    // const userId = this.props.value.location.state.user;
+    const saveRecipe = () => {
+      fetch("http://localhost:3000/api/v1/user_recipes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          user_id: this.state.userId,
+          spoonacular_id: this.state.recipeId
+        })
+      })
+        .then(data => data.json())
+        .then(data => console.log("is", data));
     };
     console.log("1", this.state.shownRecipe);
     const recipe = this.state.shownRecipe;
@@ -38,7 +57,8 @@ class Recipe extends React.Component {
           </div>
         )}
         <p>{recipe.instructions}</p>
-        <button onClick={() => saveRecipe(recipe.id)}>Save</button>
+        <button onClick={() => saveRecipe()}>Save</button>
+        <button>Back</button>
       </div>
     );
   }
