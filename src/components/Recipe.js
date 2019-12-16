@@ -10,8 +10,9 @@ class Recipe extends React.Component {
   };
 
   componentDidMount = async () => {
-    const user = this.props.location.state.user;
-    const id = this.props.location.state.recipe;
+    const user = this.props.user;
+    const id = this.props.recipeId;
+    console.log(id);
     const req = await fetch(
       `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&${API_KEY}`
     );
