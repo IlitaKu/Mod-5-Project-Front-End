@@ -2,7 +2,7 @@ const API_ENDPOINT = "http://localhost:3000/api/v1/";
 const LOGIN_URL = `${API_ENDPOINT}login`;
 const SIGNUP_URL = `${API_ENDPOINT}users`;
 const VALIDATE_URL = `${API_ENDPOINT}validate`;
-const SAVE_RECIPE = `${API_ENDPOINT}recipes`;
+const SAVE_RECIPE = `${API_ENDPOINT}recipe_users`;
 
 const jsonfy = res => {
   if (!res.ok) throw res;
