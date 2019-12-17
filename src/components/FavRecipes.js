@@ -1,42 +1,45 @@
-import React, { useState, useEfect } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Recipes from "./Recipes";
 import Paths from "../Paths";
+
 const FavRecipes = ({ user }) => {
   const API_KEY = "apiKey=3350d3f0b0614e2eaeedb34fcadd6c05";
   const [favRecipes, setFavRecipes] = useState([]);
   let history = useHistory();
 
   const getFavRecipes = () => {
-    const ids = user.user_recipes;
-    const idsArray = ids.map(id => id.spoonacular_id);
-    const uniqArr = [...new Set(idsArray)];
+    const faveRecipiesIds = user.user_recipes.map(user => user.spoonacular_id);
+    const uniqArr = [...new Set(faveRecipiesIds)];
     const callIds = uniqArr.join(",");
+    console.log(callIds);
     fetch(
       `https://api.spoonacular.com/recipes/informationBulk?ids=${callIds}&${API_KEY}`
     )
       .then(resp => resp.json())
       .then(data => {
         setFavRecipes(data);
-        // history.push(Paths.FAVOURITES);
+        history.push(Paths.FAVOURITES);
       });
   };
 
+  useEffect(() => {
+    if (favRecipes.length === 0 && user.user_recipes.length > 0) {
+      getFavRecipes();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div>
-      {favRecipes.length === 0 ? (
-        <button className="view-fav-recipes" onClick={getFavRecipes}>
-          View Favs
-        </button>
-      ) : (
-        <button
-          className="back-to-recipes"
-          onClick={() => back => history.push(Paths.RECIPE)}
-        >
-          Back
-        </button>
-      )}
-      <Recipes recipes={favRecipes} />A
+      {/* state tooge of an on */}
+      <button
+        className="back-to-recipes"
+        onClick={() => history.push("/recipes")}
+      >
+        Back
+      </button>
+      <Recipes recipes={favRecipes} />
     </div>
   );
 };

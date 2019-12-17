@@ -8,9 +8,9 @@ const Auth = props => {
       <Route path="/auth/login">
         <Login setUser={props.setUser} />
       </Route>
-      <Route path="/auth/signup">
+      {/* <Route path="/auth/signup">
         <div>Signup</div>
-      </Route>
+      </Route> */}
     </>
   );
 };

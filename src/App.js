@@ -7,6 +7,8 @@ import Home from "./containers/Home";
 import Recipe from "./components/Recipe";
 import SignUp from "./pages/Auth/SignUp";
 import FavRecipes from "./components/FavRecipes";
+import UserItems from "./components/UserItems";
+
 function App({ history }) {
   const [user, setUser] = useState(null);
 
@@ -40,6 +42,10 @@ function App({ history }) {
           <Route
             path="/favourites"
             render={routerProps => <FavRecipes user={user} />}
+          />
+          <Route
+            path="/fridger"
+            render={routerProps => <UserItems user={user} />}
           />
         </>
       ) : (
