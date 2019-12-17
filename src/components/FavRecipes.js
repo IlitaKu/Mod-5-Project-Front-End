@@ -18,16 +18,25 @@ const FavRecipes = ({ user }) => {
       .then(resp => resp.json())
       .then(data => {
         setFavRecipes(data);
-        history.push("/favourites");
+        // history.push(Paths.FAVOURITES);
       });
   };
 
   return (
     <div>
-      <button className="view-fav-recipes" onClick={getFavRecipes}>
-        View Favs
-      </button>
-      <Recipes recipes={favRecipes} />
+      {favRecipes.length === 0 ? (
+        <button className="view-fav-recipes" onClick={getFavRecipes}>
+          View Favs
+        </button>
+      ) : (
+        <button
+          className="back-to-recipes"
+          onClick={() => back => history.push(Paths.RECIPE)}
+        >
+          Back
+        </button>
+      )}
+      <Recipes recipes={favRecipes} />A
     </div>
   );
 };
