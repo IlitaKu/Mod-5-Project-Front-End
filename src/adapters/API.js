@@ -65,7 +65,7 @@ export default {
   logout,
   signup
 };
-
+// external api get recipes by ids https://api.spoonacular.com/recipes/informationBulk?ids=715538,716429
 //  get a sponacular api form "http://localhost:3000/api/v1/user_recipes/:id "
 // get ingredients for recipe
 // https://api.spoonacular.com/recipes/324694/analyzedInstructions

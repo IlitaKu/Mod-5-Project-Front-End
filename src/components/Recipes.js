@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Modal from "./Modal";
 import Recipe from "./Recipe";
 
-const Recipes = ({ recipes, user }) => {
+const Recipes = ({ recipes, favRecipes, user }) => {
   const [isModalOpen, setModal] = useState(false);
   const [recipeId, setRecipeId] = useState(null);
 
@@ -41,14 +41,6 @@ const Recipes = ({ recipes, user }) => {
                     className="recipe_button"
                     onClick={() => viewRecipe(recipe.id)}
                   >
-                    {/* <Link
-                    to={{
-                      pathname: `/recipe/${recipe.id}`,
-                      state: { recipe: recipe.id, user: user.id }
-                    }}
-                  >
-                    View Recipe
-                  </Link> */}
                     View Recipe
                   </button>
                 </div>

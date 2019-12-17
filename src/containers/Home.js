@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import SearchForm from "../components/SearchForm";
 import Recipes from "../components/Recipes";
+import FavRecipes from "../components/FavRecipes";
+import API from "../adapters/API";
 // import Recipe from "../components/Recipe";
 // import { Route, Redirect } from "react-router-dom";
 // import Paths from "../Paths";
@@ -24,11 +26,13 @@ class Home extends Component {
     this.setState({ recipes: data.results });
     console.log(this.state.recipes);
   };
+
   render() {
     const { user } = this.props;
     console.log("home", user);
     return (
       <div>
+        <FavRecipes user={user} />
         <SearchForm getRecipe={this.getRecipe} />
         <Recipes recipes={this.state.recipes} user={user} />
       </div>

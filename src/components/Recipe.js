@@ -59,7 +59,6 @@ class Recipe extends React.Component {
         )}
         <p>{recipe.instructions}</p>
         <button onClick={() => saveRecipe()}>Save</button>
-        <button>Back</button>
       </div>
     );
   }
