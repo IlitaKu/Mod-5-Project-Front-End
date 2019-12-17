@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
-const DisplayItems = ({ props }) => {
-  return <div>Hi</div>;
+const DisplayItems = ({ ingredient }) => {
+  return <div>{ingredient}</div>;
 };
 
 export default DisplayItems;

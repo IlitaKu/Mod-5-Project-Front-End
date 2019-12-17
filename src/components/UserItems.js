@@ -2,21 +2,21 @@ import React, { useState, useEffect } from "react";
 import DisplayItems from "./DisplayItems";
 
 const UserItems = ({ user }) => {
-  const [ingredient, setIngredient] = useState([]);
+  console.log("fridger", user);
+  const [ingredient, setIngredient] = useState(user.ingredients);
 
-  useEffect(() => {
-    const getItem = () => {
-      fetch("http://localhost:3000/api/v1/ingredients")
-        .then(resp => resp.json())
-        .then(data => setIngredient(data));
-    };
-    getItem();
-  }, []);
+  const list = ingredient.map(item =>
+    item ? (
+      <DisplayItems ingredient={item.name} />
+    ) : (
+      <div>No items added to the fridger</div>
+    )
+  );
 
-  const saveIngredient = e => {
+  const saveIngredient = async e => {
     e.preventDefault();
-    console.log(e.target.elements.fridgerItems.value);
-    fetch("http://localhost:3000/api/v1/ingredients", {
+    const item = e.target.elements.fridgerItems.value;
+    const newIngred = await fetch("http://localhost:3000/api/v1/ingredients", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,9 +24,13 @@ const UserItems = ({ user }) => {
       },
       body: JSON.stringify({
         user_id: user.id,
-        name: e.target.elements.fridgerItems.value
+        name: item
       })
     });
+
+    if (newIngred.status === 200) {
+      setIngredient([...ingredient, { name: item }]);
+    }
   };
 
   return (
@@ -42,7 +46,7 @@ const UserItems = ({ user }) => {
           <button className="form_button">Add</button>
         </form>
       </div>
-      <DisplayItems ingredient={ingredient} />
+      {list}
     </div>
   );
 };
