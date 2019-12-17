@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Modal from "./Modal";
 import Recipe from "./Recipe";
 
-const Recipes = ({ recipes, favRecipes, user }) => {
+const Recipes = ({ recipes, user }) => {
   const [isModalOpen, setModal] = useState(false);
   const [recipeId, setRecipeId] = useState(null);
 

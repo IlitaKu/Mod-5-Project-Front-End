@@ -6,6 +6,7 @@ import API from "./adapters/API";
 import Home from "./containers/Home";
 import Recipe from "./components/Recipe";
 import SignUp from "./pages/Auth/SignUp";
+import FavRecipes from "./components/FavRecipes";
 function App({ history }) {
   const [user, setUser] = useState(null);
 
@@ -36,6 +37,10 @@ function App({ history }) {
       {user ? (
         <>
           <Route path="/recipes" render={routerProps => <Home user={user} />} />
+          <Route
+            path="/favourites"
+            render={routerProps => <FavRecipes user={user} />}
+          />
         </>
       ) : (
         <Redirect to={Paths.LOGIN} />
