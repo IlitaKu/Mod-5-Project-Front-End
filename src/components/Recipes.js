@@ -37,12 +37,14 @@ const Recipes = ({ recipes, user }) => {
                         : `${recipe.title.substring(0, 25)}...`}
                     </h5>
                   </div>
-                  <button
-                    className="recipe_button"
-                    onClick={() => viewRecipe(recipe.id)}
-                  >
-                    View Recipe
-                  </button>
+                  <div className="button_wrapper_card">
+                    <button
+                      className="recipe_button"
+                      onClick={() => viewRecipe(recipe.id)}
+                    >
+                      View Recipe
+                    </button>
+                  </div>
                 </div>
               </div>
             );
@@ -51,7 +53,11 @@ const Recipes = ({ recipes, user }) => {
       </div>
       {isModalOpen && (
         <Modal closeModal={() => setModal(false)}>
-          <Recipe recipeId={recipeId} user={user.id} />
+          <Recipe
+            recipeId={recipeId}
+            user={user.id}
+            closeModalOnSave={() => setModal(false)}
+          />
         </Modal>
       )}
     </>

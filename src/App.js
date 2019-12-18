@@ -8,7 +8,7 @@ import Recipe from "./components/Recipe";
 import SignUp from "./pages/Auth/SignUp";
 import FavRecipes from "./components/FavRecipes";
 import UserItems from "./components/UserItems";
-
+import Button from "./components/Button";
 function App({ history }) {
   const [user, setUser] = useState(null);
 
@@ -31,7 +31,7 @@ function App({ history }) {
 
   return (
     <div className="App">
-      {user && <button onClick={logout}>log out</button>}
+      {user && <Button onClick={logout}>log out</Button>}
       <Route
         path="/auth"
         render={routerProps => <Auth {...routerProps} setUser={setUser} />}

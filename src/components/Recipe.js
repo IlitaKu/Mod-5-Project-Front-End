@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import Button from "./Button.js";
 const API_KEY = "apiKey=3350d3f0b0614e2eaeedb34fcadd6c05";
 class Recipe extends React.Component {
   state = {
@@ -25,6 +24,7 @@ class Recipe extends React.Component {
   render() {
     // const userId = this.props.value.location.state.user;
     const saveRecipe = () => {
+      this.props.closeModalOnSave();
       fetch("http://localhost:3000/api/v1/user_recipes", {
         method: "POST",
         headers: {
@@ -39,7 +39,6 @@ class Recipe extends React.Component {
         .then(data => data.json())
         .then(data => console.log("is", data));
     };
-    console.log("1", this.state.shownRecipe);
     const recipe = this.state.shownRecipe;
     // const ingredients = recipe.extendedIngredients.map(i => i.name);
     // const amount = recipe.extendedIngredients.map(i => i.amount);
@@ -58,7 +57,7 @@ class Recipe extends React.Component {
           </div>
         )}
         <p>{recipe.instructions}</p>
-        <button onClick={() => saveRecipe()}>Save</button>
+        <Button onClick={() => saveRecipe()}>Save</Button>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Recipes from "./Recipes";
-
+import Input from "./Input";
+import Button from "./Button.js";
 const SearchForm = ({ user }) => {
   const [recipes, setRecipes] = useState([]);
   const API_KEY = "apiKey=3350d3f0b0614e2eaeedb34fcadd6c05";
@@ -18,14 +19,16 @@ const SearchForm = ({ user }) => {
     <div>
       <div className="ui search">
         <form onSubmit={getRecipe}>
-          <input
+          <Input
             className="prompt"
             type="text"
             name="ingredient"
             placeholder="Ingredient"
           />
           <i class="search icon"></i>
-          <button className="form_button">Search</button>
+          <Button type="submit" className="form_button">
+            Search
+          </Button>
         </form>
       </div>
       <Recipes recipes={recipes} user={user} />

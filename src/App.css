@@ -9,7 +9,6 @@ html {
 
 .App {
   text-align: center;
-
   /* Full height */
   height: 100%;
 
@@ -54,6 +53,14 @@ html {
   }
 }
 
+.landing {
+  background-image: url(./assets/fridger.png);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .card {
   padding: 32px;
   border-radius: 6px;
@@ -82,7 +89,7 @@ html {
   background-color: 0.1s ease-out;
 
   height: 48px;
-  width: 100%;
+  width: 192px;
   font-size: 16px;
 
   padding-right: 16px;
@@ -118,6 +125,11 @@ html {
   color: #d7dae0;
   background-color: #ffffff;
   cursor: "not-allowed";
+}
+
+.button_wrapper_card {
+  display: flex;
+  justify-content: center;
 }
 
 .recipe__box-img {
@@ -200,6 +212,15 @@ html {
   width: 50%;
   height: 40%;
 }
+#full_size {
+  width: 60%;
+  height: 80%;
+}
+
+#small_size {
+  width: 40%;
+  height: 40%;
+}
 
 /* The Close Button */
 .close {
@@ -214,4 +235,22 @@ html {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.input_field {
+  transition: all 0.1s ease-in-out;
+  height: 48px;
+  margin: 6px;
+  border: 1px solid #4183c4;
+  border-radius: 6px;
+  box-sizing: border-box;
+  padding: 16px;
+  font-size: 16px;
+  appearance: none;
+  background-color: #ffffff;
+}
+
+.input_field:focus {
+  border-color: #0e4efb;
+  outline: none;
 }

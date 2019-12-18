@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Recipes from "./Recipes";
 import Paths from "../Paths";
-
+import Button from "./Button.js";
 const FavRecipes = ({ user }) => {
   const API_KEY = "apiKey=3350d3f0b0614e2eaeedb34fcadd6c05";
   const [favRecipes, setFavRecipes] = useState([]);
@@ -24,21 +24,22 @@ const FavRecipes = ({ user }) => {
   };
 
   useEffect(() => {
+    console.log("fave items");
     if (favRecipes.length === 0 && user.user_recipes.length > 0) {
       getFavRecipes();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [user]);
 
   return (
     <div>
       {/* state tooge of an on */}
-      <button
+      <Button
         className="back-to-recipes"
         onClick={() => history.push("/recipes")}
       >
         Back
-      </button>
+      </Button>
       <Recipes recipes={favRecipes} />
     </div>
   );

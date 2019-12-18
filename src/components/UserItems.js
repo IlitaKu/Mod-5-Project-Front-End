@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DisplayItems from "./DisplayItems";
-
+import Input from "./Input";
+import Button from "./Button.js";
 const UserItems = ({ user }) => {
   console.log("fridger", user);
   const [ingredient, setIngredient] = useState(user.ingredients);
@@ -37,13 +38,15 @@ const UserItems = ({ user }) => {
     <div>
       <div className="ui search">
         <form onSubmit={saveIngredient}>
-          <input
+          <Input
             className="prompt"
             type="text"
             name="fridgerItems"
             placeholder="Fridger item"
           />
-          <button className="form_button">Add</button>
+          <Button type="submit" className="form_button">
+            Add
+          </Button>
         </form>
       </div>
       {list}

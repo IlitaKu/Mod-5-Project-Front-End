@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import API from "../../adapters/API";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import Input from "../../components/Input";
+import Button from "../../components/Button";
 const Login = props => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,28 +25,28 @@ const Login = props => {
       });
   };
   return (
-    <div>
+    <div className="landing">
       <form onSubmit={handleSubmit}>
         {errors && (
           <div style={{ color: `red` }}>Email or password incorrect</div>
         )}
-        <input
+        <Input
           type="email"
           placeholder="Email"
           name="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
         />
-        <input
+        <Input
           type="password"
           name="password"
           placeholder="password"
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
-        <input type="submit"></input>
+        <Input type="submit" />
       </form>
-      <button>
+      <Button>
         <Link
           to={{
             pathname: `/users`
@@ -53,7 +54,7 @@ const Login = props => {
         >
           SignUp
         </Link>
-      </button>
+      </Button>
     </div>
   );
 };

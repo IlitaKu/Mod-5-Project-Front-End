@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import API from "../../adapters/API";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import Input from "../../components/Input";
+import Button from "../../components/Button";
 const SignUp = props => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,33 +26,33 @@ const SignUp = props => {
       });
   };
   return (
-    <div>
+    <div className="landing">
       <form onSubmit={handleSubmit}>
         <h6>{errors.join()}</h6>
-        <input
+        <Input
           type="text"
           placeholder="Name"
           name="name"
           value={name}
           onChange={e => setName(e.target.value)}
         />
-        <input
+        <Input
           type="email"
           placeholder="Email"
           name="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
         />
-        <input
+        <Input
           type="password"
           name="password"
           placeholder="Password"
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
-        <input type="submit"></input>
+        <Input type="submit" />
       </form>
-      <button>
+      <Button>
         <Link
           to={{
             pathname: `/auth/login`
@@ -59,7 +60,7 @@ const SignUp = props => {
         >
           Login
         </Link>
-      </button>
+      </Button>
     </div>
   );
 };
