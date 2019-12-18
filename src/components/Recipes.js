@@ -9,6 +9,7 @@ const Recipes = ({ recipes, user }) => {
 
   const viewRecipe = id => {
     setRecipeId(id);
+    console.log("resipes:", id);
     setModal(true);
   };
 
