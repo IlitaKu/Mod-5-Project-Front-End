@@ -9,7 +9,6 @@ const Recipes = ({ recipes, user }) => {
   const [recipeId, setRecipeId] = useState(null);
 
   const viewRecipe = id => {
-    debugger;
     setRecipeId(id);
     console.log("resipes:", id);
     setModal(true);
