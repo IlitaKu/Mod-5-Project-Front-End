@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import DisplayItems from "./DisplayItems";
 import Input from "./Input";
 import Button from "./Button.js";
@@ -58,7 +58,7 @@ const UserItems = ({ user }) => {
           </Button>
         </form>
       </div>
-      {list}
+      <ul className="ingredient_list card">{list}</ul>
     </div>
   );
 };

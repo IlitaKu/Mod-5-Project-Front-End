@@ -100,8 +100,8 @@ html {
   border-style: solid;
   border-color: #e6edff;
 
-  position: relative;
-  display: flex;
+  /* position: relative;
+  display: flex; */
   align-items: center;
   justify-content: center;
 
@@ -277,4 +277,11 @@ html {
 .list_item:hover {
   background-color: #f5f6fa;
   cursor: pointer;
+}
+.item_wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
 }
