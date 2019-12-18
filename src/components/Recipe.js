@@ -39,6 +39,7 @@ class Recipe extends React.Component {
         .then(data => data.json())
         .then(data => console.log("is", data));
     };
+    console.log("1", this.state.shownRecipe);
     const recipe = this.state.shownRecipe;
     // const ingredients = recipe.extendedIngredients.map(i => i.name);
     // const amount = recipe.extendedIngredients.map(i => i.amount);
