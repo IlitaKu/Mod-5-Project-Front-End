@@ -257,7 +257,7 @@ html {
 
 .ingredients_list {
   margin: 64px;
-  max-width: 512px;
+  width: 512px;
 }
 
 .list_item {

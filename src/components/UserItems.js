@@ -58,7 +58,8 @@ const UserItems = ({ user }) => {
           </Button>
         </form>
       </div>
-      <ul className="ingredient_list card">{list}</ul>
+
+      <ul className="ingredients_list card">{list}</ul>
     </div>
   );
 };

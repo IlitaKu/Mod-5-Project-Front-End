@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Modal from "./Modal";
 import Recipe from "./Recipe";
 import Button from "./Button";
 
-const Recipes = ({ recipes, user }) => {
+const Recipes = ({ recipes, user, setUser }) => {
   const [isModalOpen, setModal] = useState(false);
   const [recipeId, setRecipeId] = useState(null);
 
@@ -57,8 +57,9 @@ const Recipes = ({ recipes, user }) => {
         <Modal closeModal={() => setModal(false)}>
           <Recipe
             recipeId={recipeId}
-            user={user.id}
+            user={user}
             closeModalOnSave={() => setModal(false)}
+            setUser={setUser}
           />
         </Modal>
       )}

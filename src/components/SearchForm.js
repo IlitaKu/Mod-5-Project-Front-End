@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Recipes from "./Recipes";
 import Input from "./Input";
 import Button from "./Button.js";
-const SearchForm = ({ user }) => {
+const SearchForm = ({ user, setUser }) => {
+  console.log("4 component from search", user);
   const [recipes, setRecipes] = useState([]);
   const API_KEY = "apiKey=3350d3f0b0614e2eaeedb34fcadd6c05";
 
@@ -25,13 +26,13 @@ const SearchForm = ({ user }) => {
             name="ingredient"
             placeholder="Ingredient"
           />
-          <i class="search icon"></i>
           <Button type="submit" className="form_button">
+            <i class="search icon"></i>
             Search
           </Button>
         </form>
       </div>
-      <Recipes recipes={recipes} user={user} />
+      <Recipes recipes={recipes} user={user} setUser={setUser} />
     </div>
   );
 };

@@ -17,14 +17,23 @@ class Recipe extends React.Component {
     );
     const res = await req.json();
     this.setState({ shownRecipe: res });
-    this.setState({ userId: user });
+    this.setState({ userId: user.id });
     this.setState({ recipeId: id });
   };
 
   render() {
+    const { closeModalOnSave, user, setUser } = this.props;
+    console.log("recipe comonent", this.props.user);
     // const userId = this.props.value.location.state.user;
     const saveRecipe = () => {
-      this.props.closeModalOnSave();
+      const newUser = {
+        ...user,
+        user_recipes: [
+          ...user.user_recipes,
+          { spoonacular_id: this.state.recipeId }
+        ]
+      };
+      closeModalOnSave();
       fetch("http://localhost:3000/api/v1/user_recipes", {
         method: "POST",
         headers: {
@@ -37,10 +46,15 @@ class Recipe extends React.Component {
         })
       })
         .then(data => data.json())
-        .then(data => console.log("is", data));
+        .then(data => setUser(newUser));
+      // update the user after recepe been saved
+
+      console.log("newdaaaaata", newUser);
     };
+
     console.log("1", this.state.shownRecipe);
     const recipe = this.state.shownRecipe;
+
     // const ingredients = recipe.extendedIngredients.map(i => i.name);
     // const amount = recipe.extendedIngredients.map(i => i.amount);
     // const unit = recipe.extendedIngredients.map(i => i.unit);

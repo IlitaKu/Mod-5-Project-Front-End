@@ -56,6 +56,7 @@ const validate = () =>
       localStorage.setItem("token", data.token);
       return data.user;
     });
+
 const logout = () => {
   localStorage.removeItem("token");
 };

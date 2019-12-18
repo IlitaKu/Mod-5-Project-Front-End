@@ -14,7 +14,7 @@ const Login = props => {
     e.preventDefault();
     API.login({ email, password })
       .then(user => {
-        console.log(user);
+        console.log(" 2 login component", user);
         props.setUser(user);
         history.push("/recipes");
       })

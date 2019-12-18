@@ -3,12 +3,12 @@ import SearchForm from "../components/SearchForm";
 import Button from "../components/Button";
 import { useHistory } from "react-router-dom";
 
-const Home = ({ user }) => {
+const Home = ({ user, setUser }) => {
   let history = useHistory();
-  console.log(user);
+  console.log(" 3 home component", user);
   return (
     <div>
-      <SearchForm user={user} />
+      <SearchForm user={user} setUser={setUser} />
       {/* <Recipes recipes={this.state.recipes} user={user} /> */}
       <Button
         className="back-to-recipes"

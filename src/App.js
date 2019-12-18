@@ -38,10 +38,13 @@ function App({ history }) {
       />
       {user ? (
         <>
-          <Route path="/recipes" render={routerProps => <Home user={user} />} />
+          <Route
+            path="/recipes"
+            render={routerProps => <Home user={user} setUser={setUser} />}
+          />
           <Route
             path="/favourites"
-            render={routerProps => <FavRecipes user={user} />}
+            render={routerProps => <FavRecipes user={user} setUser={setUser} />}
           />
           <Route
             path="/fridger"
@@ -51,7 +54,6 @@ function App({ history }) {
       ) : (
         <Redirect to={Paths.LOGIN} />
       )}
-      <Route path="/recipe/:id" component={Recipe} />
       <Route path="/users" component={SignUp} />
     </div>
   );
