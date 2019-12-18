@@ -3,6 +3,7 @@ import SearchForm from "../components/SearchForm";
 import FavRecipes from "../components/FavRecipes";
 import UserItems from "../components/UserItems";
 import API from "../adapters/API";
+import Button from "../components/Button";
 // import Recipe from "../components/Recipe";
 // import { Route, Redirect } from "react-router-dom";
 import Paths from "../Paths";
@@ -17,18 +18,18 @@ const Home = ({ user }) => {
     <div>
       <SearchForm user={user} />
       {/* <Recipes recipes={this.state.recipes} user={user} /> */}
-      <button
+      <Button
         className="back-to-recipes"
         onClick={() => history.push("/favourites")}
       >
         View fav
-      </button>
-      <button
+      </Button>
+      <Button
         className="back-to-recipes"
         onClick={() => history.push("/fridger")}
       >
         View your items
-      </button>
+      </Button>
     </div>
   );
 };

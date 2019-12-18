@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import DisplayItems from "./DisplayItems";
 import Input from "./Input";
 import Button from "./Button.js";
+import { useHistory } from "react-router-dom";
+
 const UserItems = ({ user }) => {
+  let history = useHistory();
   console.log("fridger", user);
   const [ingredient, setIngredient] = useState(user.ingredients);
 
@@ -46,6 +49,12 @@ const UserItems = ({ user }) => {
           />
           <Button type="submit" className="form_button">
             Add
+          </Button>
+          <Button
+            className="back-to-recipes"
+            onClick={() => history.push("/recipes")}
+          >
+            Back to recipes
           </Button>
         </form>
       </div>

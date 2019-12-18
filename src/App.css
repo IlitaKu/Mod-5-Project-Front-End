@@ -254,3 +254,27 @@ html {
   border-color: #0e4efb;
   outline: none;
 }
+
+.ingredients_list {
+  margin: 64px;
+  max-width: 512px;
+}
+
+.list_item {
+  transition: all 0.1s ease-out;
+  border-top: 1px solid #d7dae0;
+  list-style-type: none;
+  font-size: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+.list_item:last-child {
+  border-bottom: 1px solid #d7dae0;
+}
+
+.list_item:hover {
+  background-color: #f5f6fa;
+  cursor: pointer;
+}

@@ -28,7 +28,7 @@ const SignUp = props => {
   return (
     <div className="landing">
       <form onSubmit={handleSubmit}>
-        <h6>{errors.join()}</h6>
+        <h6>{errors}</h6>
         <Input
           type="text"
           placeholder="Name"

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "./Modal";
 import Recipe from "./Recipe";
+import Button from "./Button";
 
 const Recipes = ({ recipes, user }) => {
   const [isModalOpen, setModal] = useState(false);
@@ -39,12 +40,12 @@ const Recipes = ({ recipes, user }) => {
                     </h5>
                   </div>
                   <div className="button_wrapper_card">
-                    <button
+                    <Button
                       className="recipe_button"
                       onClick={() => viewRecipe(recipe.id)}
                     >
                       View Recipe
-                    </button>
+                    </Button>
                   </div>
                 </div>
               </div>
