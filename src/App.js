@@ -4,11 +4,11 @@ import Auth from "./pages/Auth";
 import Paths from "./Paths";
 import API from "./adapters/API";
 import Home from "./containers/Home";
-import Recipe from "./components/Recipe";
 import SignUp from "./pages/Auth/SignUp";
 import FavRecipes from "./components/FavRecipes";
 import UserItems from "./components/UserItems";
 import Button from "./components/Button";
+import Suggestions from "./components/Suggestions";
 function App({ history }) {
   const [user, setUser] = useState(null);
 
@@ -49,6 +49,12 @@ function App({ history }) {
           <Route
             path="/fridger"
             render={routerProps => <UserItems user={user} />}
+          />
+          <Route
+            path="/suggestions"
+            render={routerProps => (
+              <Suggestions user={user} setUser={setUser} />
+            )}
           />
         </>
       ) : (

@@ -22,6 +22,13 @@ const Home = ({ user, setUser }) => {
       >
         View your items
       </Button>
+
+      <Button
+        className="back-to-recipes"
+        onClick={() => history.push("/suggestions")}
+      >
+        Today's suggestions
+      </Button>
     </div>
   );
 };
