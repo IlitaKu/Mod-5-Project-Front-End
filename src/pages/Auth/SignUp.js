@@ -22,7 +22,7 @@ const SignUp = props => {
       })
 
       .catch(error => {
-        console.log(errors);
+        console.log(error);
         setErrors(errors);
       });
   };
