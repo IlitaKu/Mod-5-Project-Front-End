@@ -15,8 +15,8 @@ const jsonfy = res => {
 //     Authorisation: localStorage.token
 // }
 
-const login = userDetails =>
-  fetch(LOGIN_URL, {
+const login = userDetails => {
+  return fetch(LOGIN_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -29,9 +29,10 @@ const login = userDetails =>
       localStorage.setItem("token", data.token);
       return data.user;
     });
+};
 
-const signup = userDetails =>
-  fetch(SIGNUP_URL, {
+const signup = userDetails => {
+  return fetch(SIGNUP_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -41,21 +42,25 @@ const signup = userDetails =>
   })
     .then(jsonfy)
     .then(data => {
+      console.log(data);
       localStorage.setItem("token", data.token);
       return data.user;
     });
+};
 
-const validate = () =>
-  fetch(VALIDATE_URL, {
+const validate = () => {
+  return fetch(VALIDATE_URL, {
     headers: {
-      Authorisation: localStorage.getItem("token")
+      Authorization: localStorage.getItem("token")
     }
   })
     .then(jsonfy)
     .then(data => {
+      console.log(data);
       localStorage.setItem("token", data.token);
       return data.user;
     });
+};
 
 const logout = () => {
   localStorage.removeItem("token");

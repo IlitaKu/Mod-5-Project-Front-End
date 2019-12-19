@@ -60,7 +60,10 @@ function App({ history }) {
       ) : (
         <Redirect to={Paths.LOGIN} />
       )}
-      <Route path="/users" component={SignUp} />
+      <Route
+        path="/users"
+        component={routerProps => <SignUp {...routerProps} setUser={setUser} />}
+      />
     </div>
   );
 }

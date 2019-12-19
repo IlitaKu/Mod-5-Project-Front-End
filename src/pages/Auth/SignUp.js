@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
+
 const SignUp = props => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
