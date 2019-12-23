@@ -42,7 +42,7 @@ const FavRecipes = ({ user, setUser }) => {
       >
         Back
       </Button>
-      <Recipes recipes={favRecipes} user={user} />
+      <Recipes recipes={favRecipes} user={user} showButton={false} />
     </div>
   );
 };

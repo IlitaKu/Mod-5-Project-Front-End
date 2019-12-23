@@ -22,7 +22,7 @@ class Recipe extends React.Component {
   };
 
   render() {
-    const { closeModalOnSave, user, setUser } = this.props;
+    const { closeModalOnSave, user, setUser, showButton = true } = this.props;
     console.log("recipe comonent", this.props.user);
     // const userId = this.props.value.location.state.user;
     const saveRecipe = () => {
@@ -59,6 +59,7 @@ class Recipe extends React.Component {
     // const amount = recipe.extendedIngredients.map(i => i.amount);
     // const unit = recipe.extendedIngredients.map(i => i.unit);
     // const ingredientImage = recipe.extendedIngredients.map(i => i.image);
+    console.log(showButton);
     return (
       <div>
         {this.state.shownRecipe.length !== 0 && (
@@ -72,7 +73,7 @@ class Recipe extends React.Component {
           </div>
         )}
         <p>{recipe.instructions}</p>
-        <Button onClick={() => saveRecipe()}>Save</Button>
+        {showButton ? <Button onClick={() => saveRecipe()}>Save</Button> : null}
       </div>
     );
   }

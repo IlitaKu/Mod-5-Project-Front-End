@@ -4,13 +4,12 @@ import Modal from "./Modal";
 import Recipe from "./Recipe";
 import Button from "./Button";
 
-const Recipes = ({ recipes, user, setUser }) => {
+const Recipes = ({ recipes, user, setUser, showButton }) => {
   const [isModalOpen, setModal] = useState(false);
   const [recipeId, setRecipeId] = useState(null);
 
   const viewRecipe = id => {
     setRecipeId(id);
-    console.log("resipes:", id);
     setModal(true);
   };
 
@@ -60,6 +59,7 @@ const Recipes = ({ recipes, user, setUser }) => {
             user={user}
             closeModalOnSave={() => setModal(false)}
             setUser={setUser}
+            showButton={showButton}
           />
         </Modal>
       )}
