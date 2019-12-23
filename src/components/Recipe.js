@@ -23,7 +23,6 @@ class Recipe extends React.Component {
 
   render() {
     const { closeModalOnSave, user, setUser, showButton = true } = this.props;
-    console.log("recipe comonent", this.props.user);
     // const userId = this.props.value.location.state.user;
     const saveRecipe = () => {
       const newUser = {
@@ -48,8 +47,6 @@ class Recipe extends React.Component {
         .then(data => data.json())
         .then(data => setUser(newUser));
       // update the user after recepe been saved
-
-      console.log("newdaaaaata", newUser);
     };
 
     console.log("1", this.state.shownRecipe);

@@ -5,7 +5,6 @@ import Paths from "../Paths";
 import Button from "./Button.js";
 
 const FavRecipes = ({ user, setUser }) => {
-  console.log("5 component frim fav recioes", user);
   const API_KEY = "apiKey=3350d3f0b0614e2eaeedb34fcadd6c05";
   const [favRecipes, setFavRecipes] = useState([]);
   let history = useHistory();
@@ -24,9 +23,7 @@ const FavRecipes = ({ user, setUser }) => {
         history.push(Paths.FAVOURITES);
       });
   };
-  console.log("fdfdgfhhfdsdfsgdhfdsfghds", user);
   useEffect(() => {
-    console.log("fave items", user);
     if (favRecipes.length === 0 && user.user_recipes.length > 0) {
       getFavRecipes();
     }
@@ -42,7 +39,12 @@ const FavRecipes = ({ user, setUser }) => {
       >
         Back
       </Button>
-      <Recipes recipes={favRecipes} user={user} showButton={false} />
+      <Recipes
+        recipes={favRecipes}
+        user={user}
+        showButton={false}
+        setUser={setUser}
+      />
     </div>
   );
 };

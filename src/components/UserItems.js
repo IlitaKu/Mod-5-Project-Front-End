@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DisplayItems from "./DisplayItems";
 import Input from "./Input";
 import Button from "./Button.js";
 import { useHistory } from "react-router-dom";
 
-const UserItems = ({ user }) => {
+const UserItems = ({ user, setUser }) => {
   let history = useHistory();
   const [ingredient, setIngredient] = useState(user.ingredients);
+
+  useEffect(() => {
+    setUser({ ...user, ingredients: ingredient });
+    console.log("eff", user);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ingredient]);
 
   const deleteItem = async id => {
     const deleteResponse = await fetch(
@@ -23,7 +29,6 @@ const UserItems = ({ user }) => {
   const list =
     ingredient.length > 0 ? (
       ingredient.map(item => {
-        console.log(item);
         return (
           <DisplayItems
             ingredient={item.name}
@@ -37,7 +42,6 @@ const UserItems = ({ user }) => {
 
   const saveIngredient = async e => {
     e.preventDefault();
-    console.log("some", e.target);
     const item = e.target.elements.fridgerItems.value;
     await fetch("http://localhost:3000/api/v1/ingredients", {
       method: "POST",
@@ -51,7 +55,6 @@ const UserItems = ({ user }) => {
       })
     })
       .then(function(response) {
-        // The API call was successful!
         if (response.ok) {
           return response.json();
         } else {
@@ -59,14 +62,13 @@ const UserItems = ({ user }) => {
         }
       })
       .then(function(data) {
-        // This is the JSON from our response
-        console.log(data);
-        // data = {id: '234', name: 'cucumber'}
-        // item = 'cucmber'
         setIngredient([...ingredient, data]);
       })
+      // .then(function(ingredient) {
+      //   setUser({ ...user, ingredients: [...user.ingredients, ingredient] });
+      // })
+      .then(console.log("is this an array?", ingredient))
       .catch(function(err) {
-        // There was an error
         console.warn("Something went wrong.", err);
       });
   };
@@ -81,11 +83,7 @@ const UserItems = ({ user }) => {
             name="fridgerItems"
             placeholder="Fridger item"
           />
-          <Button
-            type="submit"
-            className="form_button"
-            // onClick={saveIngredient}
-          >
+          <Button type="submit" className="form_button">
             Add
           </Button>
           <Button

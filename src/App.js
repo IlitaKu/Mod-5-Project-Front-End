@@ -48,7 +48,7 @@ function App({ history }) {
           />
           <Route
             path="/fridger"
-            render={routerProps => <UserItems user={user} />}
+            render={routerProps => <UserItems user={user} setUser={setUser} />}
           />
           <Route
             path="/suggestions"
