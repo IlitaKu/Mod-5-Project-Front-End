@@ -16,7 +16,7 @@ const UserItems = ({ user, setUser }) => {
 
   const deleteItem = async id => {
     const deleteResponse = await fetch(
-      `https://git.heroku.com/fridgerr.git/api/v1/ingredients/${id}`,
+      `http://localhost:3000/api/v1/ingredients/${id}`,
       {
         method: "DELETE"
       }
@@ -43,7 +43,7 @@ const UserItems = ({ user, setUser }) => {
   const saveIngredient = async e => {
     e.preventDefault();
     const item = e.target.elements.fridgerItems.value;
-    await fetch("https://git.heroku.com/fridgerr.git/api/v1/ingredients", {
+    await fetch("http://localhost:3000/api/v1/ingredients", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
