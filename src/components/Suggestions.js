@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Recipes from "./Recipes";
 import { useHistory } from "react-router-dom";
 import Button from "./Button";
+const API_KEY = process.env.REACT_APP_API_KEY;
 const Suggestions = ({ user, setUser }) => {
   const [userIngredients, setUserIngredients] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
@@ -12,7 +13,7 @@ const Suggestions = ({ user, setUser }) => {
     const coppyOfAr = [...ingArr.slice(0, 3)];
     const queryApi = coppyOfAr.join(",+");
     fetch(
-      `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${queryApi}&apiKey=3350d3f0b0614e2eaeedb34fcadd6c05`
+      `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${queryApi}&${API_KEY}`
     )
       .then(data => data.json())
       .then(data => setSuggestions(data));

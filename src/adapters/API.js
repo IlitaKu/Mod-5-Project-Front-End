@@ -78,11 +78,9 @@ export default {
 
 // api request for pictures https://spoonacular.com/recipeImages/107878-556x370.jpg
 
-// const API_KEY = "apiKey=3350d3f0b0614e2eaeedb34fcadd6c05";
-
 // // const get_recipes = "https://api.spoonacular.com/recipes/search" + API_KEY;
 // // Search recipe by ingredient
-// const get_recipes = `https://api.spoonacular.com/recipes/search?query=chicken&?apiKey=3350d3f0b0614e2eaeedb34fcadd6c05`;
+// const get_recipes = `https://api.spoonacular.com/recipes/search?query=chicken&?apiKey;
 
 // // searc by multiple ingredients
 // // https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=2

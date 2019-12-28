@@ -5,8 +5,7 @@ import Button from "./Button.js";
 const SearchForm = ({ user, setUser }) => {
   console.log("4 component from search", user);
   const [recipes, setRecipes] = useState([]);
-
-  const API_KEY = "apiKey=3350d3f0b0614e2eaeedb34fcadd6c05";
+  const API_KEY = process.env.REACT_APP_API_KEY;
 
   const getRecipe = e => {
     const ingredientName = e.target.elements.ingredient.value;
