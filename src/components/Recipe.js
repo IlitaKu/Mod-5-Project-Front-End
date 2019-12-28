@@ -33,7 +33,7 @@ class Recipe extends React.Component {
         ]
       };
       closeModalOnSave();
-      fetch("http://localhost:3000/api/v1/user_recipes", {
+      fetch("https://git.heroku.com/fridgerr.git/api/v1/user_recipes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
