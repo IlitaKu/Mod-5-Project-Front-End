@@ -1,5 +1,5 @@
 const API_ENDPOINT =
-  process.env.REACT_APP_API_ENDPOINT || "http://localhost:3000/api/v1";
+  process.env.REACT_APP_API_ENDPOINT || "http://localhost:3000/api/v1/";
 const LOGIN_URL = `${API_ENDPOINT}login`;
 const SIGNUP_URL = `${API_ENDPOINT}users`;
 const VALIDATE_URL = `${API_ENDPOINT}validate`;
