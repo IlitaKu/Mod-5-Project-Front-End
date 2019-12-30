@@ -3,6 +3,7 @@ import Recipes from "./Recipes";
 import { useHistory } from "react-router-dom";
 import Button from "./Button";
 const API_KEY = process.env.REACT_APP_API_KEY;
+
 const Suggestions = ({ user, setUser }) => {
   const [userIngredients, setUserIngredients] = useState([]);
   const [suggestions, setSuggestions] = useState([]);

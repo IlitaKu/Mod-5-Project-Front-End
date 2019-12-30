@@ -2,7 +2,8 @@ import React from "react";
 import Button from "./Button.js";
 import API from "../adapters/API";
 const API_KEY = process.env.REACT_APP_API_KEY;
-
+const API_ENDPOINT =
+  process.env.REACT_APP_API_ENDPOINT || "http://localhost:3000/api/v1";
 class Recipe extends React.Component {
   state = {
     shownRecipe: [],
@@ -35,7 +36,7 @@ class Recipe extends React.Component {
         ]
       };
       closeModalOnSave();
-      fetch("https://fridgerr.herokuapp.com/api/v1/user_recipes", {
+      fetch(`${API_ENDPOINT}user_recipes`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

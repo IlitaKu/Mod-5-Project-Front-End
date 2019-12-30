@@ -3,6 +3,8 @@ import DisplayItems from "./DisplayItems";
 import Input from "./Input";
 import Button from "./Button.js";
 import { useHistory } from "react-router-dom";
+const API_ENDPOINT =
+  process.env.REACT_APP_API_ENDPOINT || "http://localhost:3000/api/v1";
 
 const UserItems = ({ user, setUser }) => {
   let history = useHistory();
@@ -15,12 +17,9 @@ const UserItems = ({ user, setUser }) => {
   }, [ingredient]);
 
   const deleteItem = async id => {
-    const deleteResponse = await fetch(
-      `https://fridgerr.herokuapp.com/api/v1/ingredients/${id}`,
-      {
-        method: "DELETE"
-      }
-    );
+    const deleteResponse = await fetch(`${API_ENDPOINT}ingredients/${id}`, {
+      method: "DELETE"
+    });
     if (deleteResponse.status === 204) {
       setIngredient(ingredient.filter(item => item.id !== id));
     }
@@ -43,7 +42,7 @@ const UserItems = ({ user, setUser }) => {
   const saveIngredient = async e => {
     e.preventDefault();
     const item = e.target.elements.fridgerItems.value;
-    await fetch("https://fridgerr.herokuapp.com/api/v1/ingredients", {
+    await fetch(`${API_ENDPOINT}ingredients`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
