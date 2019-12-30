@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "./Button.js";
+import API from "../adapters/API";
 const API_KEY = process.env.REACT_APP_API_KEY;
+
 class Recipe extends React.Component {
   state = {
     shownRecipe: [],
@@ -33,7 +35,7 @@ class Recipe extends React.Component {
         ]
       };
       closeModalOnSave();
-      fetch("https://git.heroku.com/fridgerr.git/api/v1/user_recipes", {
+      fetch("https://fridgerr.herokuapp.com/api/v1/user_recipes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

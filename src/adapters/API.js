@@ -3,7 +3,7 @@ const API_ENDPOINT =
 const LOGIN_URL = `${API_ENDPOINT}login`;
 const SIGNUP_URL = `${API_ENDPOINT}users`;
 const VALIDATE_URL = `${API_ENDPOINT}validate`;
-const SAVE_RECIPE = `${API_ENDPOINT}recipe_users`;
+const USER_RECIPES = `${API_ENDPOINT}recipe_users`;
 
 const jsonfy = res => {
   if (!res.ok) throw res;
