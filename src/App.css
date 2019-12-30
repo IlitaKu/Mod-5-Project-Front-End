@@ -16,6 +16,7 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #ffff;
 }
 
 .App-logo {
@@ -284,4 +285,27 @@ html {
   width: 100%;
   padding-left: 16px;
   padding-right: 16px;
+}
+.toolbar {
+  width: 100;
+  background: olivedrab;
+  color: white;
+}
+.list-of-ingredients {
+  display: inline;
+}
+.listed-ingredients {
+  text-align: left;
+  padding: 2px;
+  padding-right: 2px;
+}
+.listed-amount {
+  text-align: left;
+  padding: 2px;
+  padding-right: 2px;
+}
+.listed-unit {
+  text-align: left;
+  padding: 2px;
+  padding-right: 2px;
 }

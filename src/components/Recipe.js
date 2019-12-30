@@ -63,15 +63,25 @@ class Recipe extends React.Component {
     return (
       <div>
         {this.state.shownRecipe.length !== 0 && (
-          <div className="row">
-            {recipe.extendedIngredients.map(i => (
-              <li>Ingredients: {i.name}</li>
-            ))}
-            {recipe.extendedIngredients.map(i => (
-              <li>Amount: {i.amount}</li>
-            ))}
+          <div className="list-of-ingredients">
+            <ol id="menu">
+              <h5 className="ListNames">Ingredients:</h5>
+              {recipe.extendedIngredients.map(i => (
+                <li className="listed-ingredients">
+                  {i.name}: {i.amount}
+                  {i.unit}
+                </li>
+              ))}
+              {/* {recipe.extendedIngredients.map(i => (
+                <li className="listed-amount">{i.amount}</li>
+              ))}
+              {recipe.extendedIngredients.map(i => (
+                <li className="listed-unit">{i.unit}</li>
+              ))} */}
+            </ol>
           </div>
         )}
+        <h5 className="ListNames">Method:</h5>
         <p>{recipe.instructions}</p>
         {showButton ? <Button onClick={() => saveRecipe()}>Save</Button> : null}
       </div>

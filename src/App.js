@@ -9,6 +9,7 @@ import FavRecipes from "./components/FavRecipes";
 import UserItems from "./components/UserItems";
 import Button from "./components/Button";
 import Suggestions from "./components/Suggestions";
+import Toolbar from "./components/Toolbar/Toolbar";
 function App({ history }) {
   const [user, setUser] = useState(null);
 
@@ -31,7 +32,7 @@ function App({ history }) {
 
   return (
     <div className="App">
-      {user && <Button onClick={logout}>log out</Button>}
+      {/* {user && <Button onClick={logout}>log out</Button>} */}
       <Route
         path="/auth"
         render={routerProps => <Auth {...routerProps} setUser={setUser} />}
