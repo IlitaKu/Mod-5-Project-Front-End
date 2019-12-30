@@ -24,7 +24,7 @@ const SearchForm = ({ user, setUser }) => {
             className="prompt"
             type="text"
             name="ingredient"
-            placeholder="Ingredient"
+            placeholder="Blue cheese, broccoli"
           />
           <Button type="submit" className="form_button">
             <i class="search icon"></i>
