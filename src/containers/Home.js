@@ -23,10 +23,10 @@ const Home = ({ user, setUser }) => {
       <br></br>
       <br></br>
       <Button
-        className="back-to-recipes"
+        className="suggestions-button"
         onClick={() => history.push("/suggestions")}
       >
-        Today's suggestions
+        Personalised Recepes
       </Button>
       <br></br>
       <br></br>
