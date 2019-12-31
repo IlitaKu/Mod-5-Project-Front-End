@@ -43,7 +43,7 @@ function App({ history }) {
             path="/recipes"
             render={routerProps => <Home user={user} setUser={setUser} />}
           />
-          {user && <Button onClick={logout}>log out</Button>}
+          {/* {user && <Button onClick={logout}>log out</Button>} */}
           <Route
             path="/favourites"
             render={routerProps => <FavRecipes user={user} setUser={setUser} />}
