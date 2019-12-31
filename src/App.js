@@ -7,7 +7,6 @@ import Home from "./containers/Home";
 import SignUp from "./pages/Auth/SignUp";
 import FavRecipes from "./components/FavRecipes";
 import UserItems from "./components/UserItems";
-import Button from "./components/Button";
 import Suggestions from "./components/Suggestions";
 import Toolbar from "./components/Toolbar/Toolbar";
 

@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import Recipes from "./Recipes";
 import Input from "./Input";
 import Button from "./Button.js";
+
 const SearchForm = ({ user, setUser }) => {
-  console.log("4 component from search", user);
   const [recipes, setRecipes] = useState([]);
   const API_KEY = process.env.REACT_APP_API_KEY;
 
   const getRecipe = e => {
-    const ingredientName = e.target.elements.ingredient.value;
+    var ingredientName = e.target.elements.ingredient.value;
     e.preventDefault();
+    e.target.reset();
     fetch(
       `https://api.spoonacular.com/recipes/search?query=${ingredientName}&${API_KEY}`
     )
