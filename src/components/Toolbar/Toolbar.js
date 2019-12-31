@@ -1,46 +1,55 @@
-// import React from "react";
-// import API from "../../adapters/API";
-// import { Link } from "react-router-dom";
 
-// const toolbar = props => {
-//   return (
-//     <header className="toolbar">
-//       <nav className="toolbar_navigation">
-//         <div></div>
-//         <div className="toolbar-logo">
-//           <Link
-//             to={{
-//               pathname: `/recipes`
-//             }}
-//           >
-//             Recipes
-//           </Link>
-//         </div>
-//         <div className="toolbar-navigation-items">
-//           <ul>
-//             <li>
-//               <Link
-//                 to={{
-//                   pathname: `/auth`
-//                 }}
-//               >
-//                 Recipes
-//               </Link>
-//             </li>
-//             <li>
-//               <Link
-//                 to={{
-//                   pathname: `/auth/logout`
-//                 }}
-//               >
-//                 LogOut
-//               </Link>
-//             </li>
-//           </ul>
-//         </div>
-//       </nav>
-//     </header>
-//   );
-// };
+import React from "react";
+import API from "../../adapters/API";
+import { Link } from "react-router-dom";
+import Paths from "../../Paths";
+import Button from "../../components/Button";
+import { useHistory } from "react-router-dom";
 
-// export default toolbar;
+const Toolbar = ({ user, setUser }) => {
+  let history = useHistory();
+  return (
+    <header className="toolbar">
+      <nav className="toolbar_navigation">
+        <div></div>
+        {/* <ul id="nav"> */}
+        <div className="toolbar-logo">
+          <Link
+            to={{
+              pathname: `/recipes`
+            }}
+            style={{ fontSize: 30, color: "green" }}
+          >
+            Fridger
+          </Link>
+        </div>
+        <Button
+          className="back-to-recipes"
+          onClick={() => history.push("/fridger")}
+        >
+          My Fridge
+        </Button>
+        <Button
+          className="back-to-recipes"
+          onClick={() => history.push("/favourites")}
+        >
+          Favs
+        </Button>
+        <Button className="toolbar-logout">
+          <Link
+            to={{
+              pathname: Paths.LOGIN
+            }}
+            style={{ fontSize: 16, color: "black" }}
+          >
+            Logout
+          </Link>
+        </Button>
+        {/* </ul> */}
+      </nav>
+    </header>
+  );
+};
+
+export default Toolbar;
+

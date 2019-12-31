@@ -7,9 +7,7 @@ const Home = ({ user, setUser }) => {
   let history = useHistory();
   return (
     <div>
-      <SearchForm user={user} setUser={setUser} />
-      {/* <Recipes recipes={this.state.recipes} user={user} /> */}
-      <Button
+      {/* <Button
         className="back-to-recipes"
         onClick={() => history.push("/favourites")}
       >
@@ -20,14 +18,19 @@ const Home = ({ user, setUser }) => {
         onClick={() => history.push("/fridger")}
       >
         View your items
-      </Button>
-
+      </Button> */}
+      <br></br>
+      <br></br>
       <Button
-        className="back-to-recipes"
+        className="suggestions-button"
         onClick={() => history.push("/suggestions")}
       >
-        Today's suggestions
+        Personalised Recepes
       </Button>
+      <br></br>
+      <br></br>
+      <SearchForm user={user} setUser={setUser} />
+      {/* <Recipes recipes={this.state.recipes} user={user} /> */}
     </div>
   );
 };

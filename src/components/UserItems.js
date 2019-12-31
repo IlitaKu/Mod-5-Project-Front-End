@@ -89,7 +89,7 @@ const UserItems = ({ user, setUser }) => {
             className="back-to-recipes"
             onClick={() => history.push("/recipes")}
           >
-            Back to recipes
+            Back to main page
           </Button>
         </form>
       </div>

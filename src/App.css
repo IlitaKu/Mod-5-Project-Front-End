@@ -16,7 +16,11 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #ffff;
+  background-color: #ffffff;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App-logo {
@@ -287,7 +291,52 @@ html {
   padding-right: 16px;
 }
 .toolbar {
-  width: 100;
+  background-color: #ffffff;
+  transition: opacity 0.1s ease-out;
+  border-color: 0.1s ease-out;
+  background-color: 0.1s ease-out;
+
+  padding-right: 16px;
+  padding-left: 16px;
+  border: none;
+  border-radius: 6px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #e6edff;
+
+  /* position: relative;
+  display: flex; */
+  /* align-items: center;
+  justify-content: center; */
+
+  /* white-space: nowrap;
+  outline: none;
+  cursor: pointer; */
+}
+header.toolbar_navigation {
+  display: inline;
+}
+.toolbar-logo {
+  grid-column: 3 / 10;
+  align-items: left;
+  text-align: left;
+  font-family: sans-serif;
+  display: inline;
+  padding-right: 300px;
+  /* padding-left: 100px; */
+}
+.toolbar-logout {
+  grid-column: 3 / 10;
+  /* grid-column: 11/13; */
+  /* margin-top: 10px; */
+  align-items: right;
+  text-align: right;
+  font-family: sans-serif;
+  display: inline;
+  padding-right: 100px;
+  padding-left: 100px;
+
+/*   width: 100;
   background: olivedrab;
   color: white;
 }
@@ -307,5 +356,5 @@ html {
 .listed-unit {
   text-align: left;
   padding: 2px;
-  padding-right: 2px;
+  padding-right: 2px; */
 }
