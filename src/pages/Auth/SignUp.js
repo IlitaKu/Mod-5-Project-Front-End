@@ -27,7 +27,7 @@ const SignUp = props => {
       });
   };
   return (
-    <div className="landing">
+    <>
       <form onSubmit={handleSubmit}>
         <h6>{errors}</h6>
         <Input
@@ -53,16 +53,8 @@ const SignUp = props => {
         />
         <Input type="submit" />
       </form>
-      <Button>
-        <Link
-          to={{
-            pathname: `/auth/login`
-          }}
-        >
-          Login
-        </Link>
-      </Button>
-    </div>
+      <Button onClick={props.openLogin}>Login</Button>
+    </>
   );
 };
 

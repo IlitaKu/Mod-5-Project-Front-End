@@ -61,9 +61,11 @@ html {
 .landing {
   background-image: url(./assets/fridger.png);
   height: 100%;
+  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: fixed;
 }
 
 .card {
@@ -336,7 +338,7 @@ header.toolbar_navigation {
   padding-right: 100px;
   padding-left: 100px;
 
-/*   width: 100;
+  width: 100;
   background: olivedrab;
   color: white;
 }
@@ -356,5 +358,5 @@ header.toolbar_navigation {
 .listed-unit {
   text-align: left;
   padding: 2px;
-  padding-right: 2px; */
+  padding-right: 2px;
 }

@@ -28,7 +28,7 @@ const SearchForm = ({ user, setUser }) => {
           />
           <Button type="submit" className="form_button">
             <i class="search icon"></i>
-            Search
+            Search Recipes
           </Button>
         </form>
       </div>

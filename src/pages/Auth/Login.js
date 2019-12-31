@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
+
 const Login = props => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,7 +26,7 @@ const Login = props => {
       });
   };
   return (
-    <div className="landing">
+    <>
       <form onSubmit={handleSubmit}>
         {errors && (
           <div style={{ color: `red` }}>Email or password incorrect</div>
@@ -46,16 +47,8 @@ const Login = props => {
         />
         <Input type="submit" />
       </form>
-      <Button>
-        <Link
-          to={{
-            pathname: `/users`
-          }}
-        >
-          SignUp
-        </Link>
-      </Button>
-    </div>
+      <Button onClick={props.openSignUp}>SignUp</Button>
+    </>
   );
 };
 
