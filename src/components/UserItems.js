@@ -9,10 +9,9 @@ const API_ENDPOINT =
 const UserItems = ({ user, setUser }) => {
   let history = useHistory();
   const [ingredient, setIngredient] = useState(user.ingredients);
-
+  console.log("1111", ingredient);
   useEffect(() => {
     setUser({ ...user, ingredients: ingredient });
-    console.log("eff", user);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ingredient]);
 
@@ -31,6 +30,7 @@ const UserItems = ({ user, setUser }) => {
         return (
           <DisplayItems
             ingredient={item.name}
+            dates={item.created_at.slice(5, 10)}
             onClick={() => deleteItem(item.id)}
           />
         );
@@ -41,6 +41,7 @@ const UserItems = ({ user, setUser }) => {
 
   const saveIngredient = async e => {
     e.preventDefault();
+    // e.target.reset();
     const item = e.target.elements.fridgerItems.value;
     await fetch(`${API_ENDPOINT}ingredients`, {
       method: "POST",
@@ -63,10 +64,10 @@ const UserItems = ({ user, setUser }) => {
       .then(function(data) {
         setIngredient([...ingredient, data]);
       })
+      .then(e.target.reset())
       // .then(function(ingredient) {
       //   setUser({ ...user, ingredients: [...user.ingredients, ingredient] });
       // })
-      .then(console.log("is this an array?", ingredient))
       .catch(function(err) {
         console.warn("Something went wrong.", err);
       });
