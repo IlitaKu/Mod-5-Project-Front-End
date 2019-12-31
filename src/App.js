@@ -10,6 +10,7 @@ import UserItems from "./components/UserItems";
 import Button from "./components/Button";
 import Suggestions from "./components/Suggestions";
 import Toolbar from "./components/Toolbar/Toolbar";
+
 function App({ history }) {
   const [user, setUser] = useState(null);
 
@@ -38,7 +39,7 @@ function App({ history }) {
       />
       {user ? (
         <>
-          <Toolbar />
+          <Toolbar user={user} setUser={setUser} />
           <Route
             path="/recipes"
             render={routerProps => <Home user={user} setUser={setUser} />}

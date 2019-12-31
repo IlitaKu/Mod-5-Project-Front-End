@@ -8,9 +8,7 @@ const Home = ({ user, setUser }) => {
   console.log(" 3 home component", user);
   return (
     <div>
-      <SearchForm user={user} setUser={setUser} />
-      {/* <Recipes recipes={this.state.recipes} user={user} /> */}
-      <Button
+      {/* <Button
         className="back-to-recipes"
         onClick={() => history.push("/favourites")}
       >
@@ -21,14 +19,19 @@ const Home = ({ user, setUser }) => {
         onClick={() => history.push("/fridger")}
       >
         View your items
-      </Button>
-
+      </Button> */}
+      <br></br>
+      <br></br>
       <Button
         className="back-to-recipes"
         onClick={() => history.push("/suggestions")}
       >
         Today's suggestions
       </Button>
+      <br></br>
+      <br></br>
+      <SearchForm user={user} setUser={setUser} />
+      {/* <Recipes recipes={this.state.recipes} user={user} /> */}
     </div>
   );
 };

@@ -322,8 +322,8 @@ header.toolbar_navigation {
   text-align: left;
   font-family: sans-serif;
   display: inline;
-  padding-right: 100px;
-  padding-left: 100px;
+  padding-right: 300px;
+  /* padding-left: 100px; */
 }
 .toolbar-logout {
   grid-column: 3 / 10;

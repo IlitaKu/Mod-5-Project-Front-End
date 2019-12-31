@@ -2,8 +2,11 @@ import React from "react";
 import API from "../../adapters/API";
 import { Link } from "react-router-dom";
 import Paths from "../../Paths";
+import Button from "../../components/Button";
+import { useHistory } from "react-router-dom";
 
-const toolbar = props => {
+const Toolbar = ({ user, setUser }) => {
+  let history = useHistory();
   return (
     <header className="toolbar">
       <nav className="toolbar_navigation">
@@ -14,25 +17,37 @@ const toolbar = props => {
             to={{
               pathname: `/recipes`
             }}
-            style={{ fontSize: 20, color: "black" }}
+            style={{ fontSize: 30, color: "green" }}
           >
-            Recipes
+            Fridger
           </Link>
         </div>
-        <div className="toolbar-logout">
+        <Button
+          className="back-to-recipes"
+          onClick={() => history.push("/fridger")}
+        >
+          My Fridge
+        </Button>
+        <Button
+          className="back-to-recipes"
+          onClick={() => history.push("/favourites")}
+        >
+          Favs
+        </Button>
+        <Button className="toolbar-logout">
           <Link
             to={{
               pathname: Paths.LOGIN
             }}
-            style={{ fontSize: 18, color: "black" }}
+            style={{ fontSize: 16, color: "black" }}
           >
-            LogOut
+            Logout
           </Link>
-        </div>
+        </Button>
         {/* </ul> */}
       </nav>
     </header>
   );
 };
 
-export default toolbar;
+export default Toolbar;

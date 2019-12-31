@@ -37,7 +37,7 @@ const FavRecipes = ({ user, setUser }) => {
         className="back-to-recipes"
         onClick={() => history.push("/recipes")}
       >
-        Back
+        Back to main page
       </Button>
       <Recipes
         recipes={favRecipes}
