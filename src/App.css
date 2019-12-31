@@ -335,4 +335,26 @@ header.toolbar_navigation {
   display: inline;
   padding-right: 100px;
   padding-left: 100px;
+
+/*   width: 100;
+  background: olivedrab;
+  color: white;
+}
+.list-of-ingredients {
+  display: inline;
+}
+.listed-ingredients {
+  text-align: left;
+  padding: 2px;
+  padding-right: 2px;
+}
+.listed-amount {
+  text-align: left;
+  padding: 2px;
+  padding-right: 2px;
+}
+.listed-unit {
+  text-align: left;
+  padding: 2px;
+  padding-right: 2px; */
 }

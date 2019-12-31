@@ -1,3 +1,4 @@
+
 import React from "react";
 import API from "../../adapters/API";
 import { Link } from "react-router-dom";
@@ -51,3 +52,4 @@ const Toolbar = ({ user, setUser }) => {
 };
 
 export default Toolbar;
+

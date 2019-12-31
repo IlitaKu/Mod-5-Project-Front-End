@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 
 const Home = ({ user, setUser }) => {
   let history = useHistory();
-  console.log(" 3 home component", user);
   return (
     <div>
       {/* <Button
