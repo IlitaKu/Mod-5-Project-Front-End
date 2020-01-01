@@ -68,10 +68,11 @@ const SignUp = props => {
     }
   };
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <h6>{errors.generic}</h6>
+    <div className="login-form-wrapper">
+      <form className="login-form" onSubmit={handleSubmit}>
+        {errors.generic && <h6>{errors.generic}</h6>}
         <Input
+          className="login-form-input"
           type="text"
           placeholder="Name"
           name="name"
@@ -83,6 +84,7 @@ const SignUp = props => {
           <div className="error-messages">{errors.nameError}</div>
         )}
         <Input
+          className="login-form-input"
           type="email"
           placeholder="Email"
           name="email"
@@ -94,6 +96,7 @@ const SignUp = props => {
           <div className="error-messages">{errors.emailError}</div>
         )}
         <Input
+          className="login-form-input"
           type="password"
           name="password"
           placeholder="Password"
@@ -104,13 +107,17 @@ const SignUp = props => {
         {errors.passwordError && (
           <div className="error-messages">{errors.passwordError}</div>
         )}
-        <Button type="submit" disabled={!isImputValid}>
+        <Button
+          className="login-form-button"
+          type="submit"
+          disabled={!isImputValid}
+        >
           Submit
         </Button>
       </form>
 
       {/* <Button onClick={props.openLogin}>Login</Button> */}
-    </>
+    </div>
   );
 };
 

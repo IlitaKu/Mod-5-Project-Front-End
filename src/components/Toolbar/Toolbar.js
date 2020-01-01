@@ -35,6 +35,15 @@ const Toolbar = ({ logout }) => {
           >
             Favs
           </Link>
+          <Link
+            className="toolbar-section"
+            to={{
+              pathname: `/about`
+            }}
+          >
+            About
+          </Link>
+
           <button
             className="toolbar-logout toolbar-section"
             onClick={() => logout()}

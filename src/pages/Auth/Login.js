@@ -14,7 +14,7 @@ const Login = props => {
     generic: null
   });
   let history = useHistory();
-  const isImputValid =
+  const isInputValid =
     !errors.nameError &&
     !errors.emailError &&
     !errors.passwordError &&
@@ -37,7 +37,7 @@ const Login = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (isImputValid) {
+    if (isInputValid) {
       API.login({ email, password })
         .then(user => {
           console.log(" 2 login component", user);
@@ -52,12 +52,13 @@ const Login = props => {
     }
   };
   return (
-    <>
-      <form onSubmit={handleSubmit}>
+    <div className="login-form-wrapper">
+      <form className="login-form" onSubmit={handleSubmit}>
         {errors.generic && (
           <div className="error-messages">Email or password incorrect</div>
         )}
         <Input
+          className="login-form-input"
           type="email"
           placeholder="Email"
           name="email"
@@ -69,6 +70,7 @@ const Login = props => {
           <div className="error-messages">{errors.emailError}</div>
         )}
         <Input
+          className="login-form-input"
           type="password"
           name="password"
           placeholder="password"
@@ -79,12 +81,15 @@ const Login = props => {
         {errors.passwordError && (
           <div className="error-messages">{errors.passwordError}</div>
         )}
-        <Button type="submit" disabled={!isImputValid}>
+        <Button
+          className="login-form-button"
+          type="submit"
+          disabled={!isInputValid}
+        >
           Submit
         </Button>
       </form>
-      {/* <Button onClick={props.openSignUp}>SignUp</Button> */}
-    </>
+    </div>
   );
 };
 

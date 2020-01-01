@@ -9,7 +9,7 @@ import FavRecipes from "./components/FavRecipes";
 import UserItems from "./components/UserItems";
 import Suggestions from "./components/Suggestions";
 import Toolbar from "./components/Toolbar/Toolbar";
-
+import About from "./components/About";
 function App({ history }) {
   const [user, setUser] = useState(null);
 
@@ -58,6 +58,7 @@ function App({ history }) {
               <Suggestions user={user} setUser={setUser} />
             )}
           />
+          <Route path="/about" render={routerProps => <About />} />
         </>
       ) : (
         <Redirect to={Paths.LOGIN} />
