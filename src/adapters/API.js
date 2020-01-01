@@ -1,10 +1,9 @@
 const API_ENDPOINT =
   process.env.REACT_APP_API_ENDPOINT || "http://localhost:3000/api/v1/";
-const RECIPES = `${API_ENDPOINT}recipes` || "http://localhost:3000/recipes";
+// const RECIPES = `${API_ENDPOINT}recipes` || "http://localhost:3000/recipes";
 const LOGIN_URL = `${API_ENDPOINT}login`;
 const SIGNUP_URL = `${API_ENDPOINT}users`;
 const VALIDATE_URL = `${API_ENDPOINT}validate`;
-const USER_RECIPES = `${API_ENDPOINT}recipe_users`;
 
 const jsonfy = res => {
   if (!res.ok) throw res;
@@ -13,9 +12,6 @@ const jsonfy = res => {
     else return data;
   });
 };
-// const authHeader = () => {
-//     Authorisation: localStorage.token
-// }
 
 const login = userDetails => {
   return fetch(LOGIN_URL, {

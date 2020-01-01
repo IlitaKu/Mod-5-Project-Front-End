@@ -228,6 +228,27 @@ html {
   width: 40%;
   height: 40%;
 }
+.login-form-wrapper {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-form-input {
+  margin-top: 16px;
+}
+
+.login-form-button {
+  margin: auto;
+  margin-top: 16px;
+}
 
 /* The Close Button */
 .close {
@@ -436,6 +457,7 @@ html {
   padding: inherit; */
   color: green;
   font-size: 36px;
+  align-items: center;
 }
 .use-by-date {
   color: #d7dae0;
@@ -443,4 +465,11 @@ html {
   border-color: #d7dae0;
   display: contents;
   font-family: "Lato,Helvetica";
+}
+.about-icon {
+  width: 64px;
+  height: 64px;
+}
+i.icon {
+  display: inline-flex;
 }

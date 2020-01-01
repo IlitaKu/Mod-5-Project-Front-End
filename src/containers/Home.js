@@ -1,10 +1,7 @@
 import React from "react";
 import SearchForm from "../components/SearchForm";
-import Button from "../components/Button";
-import { useHistory } from "react-router-dom";
 
 const Home = ({ user, setUser }) => {
-  let history = useHistory();
   return (
     <div>
       <div className="display-text">

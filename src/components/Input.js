@@ -8,11 +8,12 @@ const Input = ({
   ariaLabel,
   placeholder,
   onChange,
-  onBlur
+  onBlur,
+  className
 }) => {
   return (
     <input
-      className="input_field"
+      className={`input_field ${className}`}
       type={type}
       value={value === null ? undefined : value}
       name={name}

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Recipes from "./Recipes";
 import Paths from "../Paths";
-import Button from "./Button.js";
 
 const FavRecipes = ({ user, setUser }) => {
   const API_KEY = process.env.REACT_APP_API_KEY;

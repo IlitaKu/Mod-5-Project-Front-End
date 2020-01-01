@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Recipes from "./Recipes";
 import Input from "./Input";
 import Button from "./Button.js";

@@ -65,13 +65,7 @@ const UserItems = ({ user, setUser }) => {
       .then(function(data) {
         setIngredient([...ingredient, data]);
       })
-      .then(e.target.reset())
-      // .then(function(ingredient) {
-      //   setUser({ ...user, ingredients: [...user.ingredients, ingredient] });
-      // })
-      .catch(function(err) {
-        console.warn("Something went wrong.", err);
-      });
+      .then(e.target.reset());
   };
 
   return (
@@ -79,8 +73,6 @@ const UserItems = ({ user, setUser }) => {
       <div className="display-text">
         <h1 className="header">Eat while good</h1>
         <div className="sub-header">
-          {/* Get recipe suggestions based on the food you have at home.<br></br>
-          Keep track of food you’ve got at home, even when you’re on the move. */}
           Add the items to fridger section.<br></br>
           Search for personalised recipes based on your fridger content, so the
           question "what's for dinner?" is answered before it's even asked.
@@ -95,20 +87,23 @@ const UserItems = ({ user, setUser }) => {
             placeholder="Fridger item"
           />
           <Button type="submit" className="form_button">
+            <i class="plus circle icon"></i>
             Add to fridger
           </Button>
         </form>
       </div>
 
       <ul className="ingredients_list card">{list}</ul>
-      <Button
-        id="personalised-recipe-button"
-        className="suggestions-button"
-        onClick={() => history.push("/suggestions")}
-      >
-        Personalised Recepes
-        <i class="fas fa-carrot"></i>
-      </Button>
+      {ingredient.length > 0 && (
+        <Button
+          id="personalised-recipe-button"
+          className="suggestions-button"
+          onClick={() => history.push("/suggestions")}
+        >
+          <i class="fas fa-carrot"></i>
+          Personalised Recepes
+        </Button>
+      )}
     </div>
   );
 };
