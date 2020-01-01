@@ -32,19 +32,22 @@ const FavRecipes = ({ user, setUser }) => {
 
   return (
     <div>
-      {/* state tooge of an on */}
-      <Button
-        className="back-to-recipes"
-        onClick={() => history.push("/recipes")}
-      >
-        Back to main page
-      </Button>
-      <Recipes
-        recipes={favRecipes}
-        user={user}
-        showButton={false}
-        setUser={setUser}
-      />
+      <div className="display-text">
+        <h1 className="header">Get Inspired</h1>
+        <div className="sub-header">
+          Browse through suggestions or search by ingredients
+        </div>
+      </div>
+      {favRecipes.length > 0 ? (
+        <Recipes
+          recipes={favRecipes}
+          user={user}
+          showButton={false}
+          setUser={setUser}
+        />
+      ) : (
+        <div>No Recipes added yet</div>
+      )}
     </div>
   );
 };

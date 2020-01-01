@@ -25,7 +25,13 @@ class Recipe extends React.Component {
   };
 
   render() {
-    const { closeModalOnSave, user, setUser, showButton = true } = this.props;
+    const {
+      closeModalOnSave,
+      user,
+      setUser,
+      recipeImage,
+      showButton = true
+    } = this.props;
     // const userId = this.props.value.location.state.user;
     const saveRecipe = () => {
       const newUser = {
@@ -61,29 +67,44 @@ class Recipe extends React.Component {
     // const ingredientImage = recipe.extendedIngredients.map(i => i.image);
     console.log(showButton);
     return (
-      <div>
+      <div className="recipe-card">
         {this.state.shownRecipe.length !== 0 && (
           <div className="list-of-ingredients">
-            <ol id="menu">
-              <h5 className="ListNames">Ingredients:</h5>
-              {recipe.extendedIngredients.map(i => (
-                <li className="listed-ingredients">
-                  {i.name}: {i.amount}
-                  {i.unit}
-                </li>
-              ))}
-              {/* {recipe.extendedIngredients.map(i => (
+            <h2>{recipe.title}</h2>
+            <h5 className="ListNames">Ingredients:</h5>
+            <div className="ingredients-wrapper">
+              <ol id="menu">
+                {recipe.extendedIngredients &&
+                  recipe.extendedIngredients.map(i => (
+                    <li className="listed-ingredients">
+                      {i.name}: {i.amount}
+                      {i.unit}
+                    </li>
+                  ))}
+                {/* {recipe.extendedIngredients.map(i => (
                 <li className="listed-amount">{i.amount}</li>
               ))}
               {recipe.extendedIngredients.map(i => (
                 <li className="listed-unit">{i.unit}</li>
               ))} */}
-            </ol>
+              </ol>
+              {recipeImage && (
+                <img className="recipe-card-image" src={recipeImage} alt="" />
+              )}
+            </div>
           </div>
         )}
-        <h5 className="ListNames">Method:</h5>
-        <p>{recipe.instructions}</p>
-        {showButton ? <Button onClick={() => saveRecipe()}>Save</Button> : null}
+        {recipe.instructions && (
+          <>
+            <h5>Method:</h5>
+            <p className="recipe-method">{recipe.instructions}</p>
+          </>
+        )}
+        {showButton ? (
+          <div className="button-wrapper">
+            <Button onClick={() => saveRecipe()}>Add to favs</Button>
+          </div>
+        ) : null}
       </div>
     );
   }

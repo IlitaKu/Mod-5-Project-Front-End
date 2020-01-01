@@ -7,16 +7,18 @@ const Input = ({
   disabled,
   ariaLabel,
   placeholder,
-  onChange
+  onChange,
+  onBlur
 }) => {
   return (
     <input
-      class="input_field"
+      className="input_field"
       type={type}
       value={value === null ? undefined : value}
       name={name}
       disabled={disabled}
       onChange={onChange}
+      onBlur={onBlur}
       aria-label={ariaLabel}
       placeholder={placeholder}
     />

@@ -5,7 +5,7 @@ import Paths from "../../Paths";
 import Button from "../../components/Button";
 import { useHistory } from "react-router-dom";
 
-const Toolbar = ({ user, setUser }) => {
+const Toolbar = ({ logout }) => {
   let history = useHistory();
   return (
     <header className="toolbar">
@@ -34,15 +34,8 @@ const Toolbar = ({ user, setUser }) => {
         >
           Favs
         </Button>
-        <Button className="toolbar-logout">
-          <Link
-            to={{
-              pathname: Paths.LOGIN
-            }}
-            style={{ fontSize: 16, color: "black" }}
-          >
-            Logout
-          </Link>
+        <Button className="toolbar-logout" onClick={() => logout()}>
+          Logout
         </Button>
         {/* </ul> */}
       </nav>

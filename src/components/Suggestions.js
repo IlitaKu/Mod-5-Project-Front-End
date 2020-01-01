@@ -21,12 +21,6 @@ const Suggestions = ({ user, setUser }) => {
   }, [user.ingredients, userIngredients]);
   return (
     <div>
-      <Button
-        className="back-to-recipes"
-        onClick={() => history.push("/recipes")}
-      >
-        Back to main page
-      </Button>
       <Recipes recipes={suggestions} user={user} setUser={setUser} />
     </div>
   );

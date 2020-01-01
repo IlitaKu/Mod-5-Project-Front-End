@@ -3,8 +3,8 @@ const DisplayItems = ({ ingredient, dates, onClick }) => {
   return (
     <li className="list_item">
       <div className="item_wrapper">
-        {ingredient} - added on: {dates}
-        <span class="close" role="button" onClick={onClick}>
+        {ingredient} - added {dates}
+        <span className="close" role="button" onClick={onClick}>
           &times;
         </span>
       </div>

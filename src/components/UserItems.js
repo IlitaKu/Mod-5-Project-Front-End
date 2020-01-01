@@ -3,6 +3,8 @@ import DisplayItems from "./DisplayItems";
 import Input from "./Input";
 import Button from "./Button.js";
 import { useHistory } from "react-router-dom";
+import moment from "moment";
+
 const API_ENDPOINT =
   process.env.REACT_APP_API_ENDPOINT || "http://localhost:3000/api/v1/";
 
@@ -30,7 +32,9 @@ const UserItems = ({ user, setUser }) => {
         return (
           <DisplayItems
             ingredient={item.name}
-            dates={item.created_at.slice(5, 10)}
+            dates={moment(item.created_at)
+              // .startOf("minutes")
+              .fromNow()}
             onClick={() => deleteItem(item.id)}
           />
         );
@@ -75,6 +79,12 @@ const UserItems = ({ user, setUser }) => {
 
   return (
     <div>
+      <div className="display-text">
+        <h1 className="header">Get Inspired</h1>
+        <div className="sub-header">
+          Browse through suggestions or search by ingredients
+        </div>
+      </div>
       <div className="ui search">
         <form onSubmit={saveIngredient}>
           <Input
@@ -84,13 +94,13 @@ const UserItems = ({ user, setUser }) => {
             placeholder="Fridger item"
           />
           <Button type="submit" className="form_button">
-            Add
+            Add to fridger
           </Button>
           <Button
-            className="back-to-recipes"
-            onClick={() => history.push("/recipes")}
+            className="suggestions-button"
+            onClick={() => history.push("/suggestions")}
           >
-            Back to main page
+            Personalised Recepes
           </Button>
         </form>
       </div>

@@ -131,7 +131,8 @@ html {
 .recipe_button:disabled {
   color: #d7dae0;
   background-color: #ffffff;
-  cursor: "not-allowed";
+  border-color: #d7dae0;
+  cursor: not-allowed;
 }
 
 .button_wrapper_card {
@@ -359,4 +360,31 @@ header.toolbar_navigation {
   text-align: left;
   padding: 2px;
   padding-right: 2px;
+}
+.recipe-card {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.ingredients-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.recipe-card-image {
+  width: 384px;
+}
+.button-wrapper {
+  padding-top: 18px;
+}
+.recipe-method {
+  margin: 0;
+}
+
+.error-messages {
+  color: red;
+}
+.display-text {
+}
+.header {
+}
+.sub-header {
 }

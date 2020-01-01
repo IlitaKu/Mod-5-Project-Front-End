@@ -7,30 +7,14 @@ const Home = ({ user, setUser }) => {
   let history = useHistory();
   return (
     <div>
-      {/* <Button
-        className="back-to-recipes"
-        onClick={() => history.push("/favourites")}
-      >
-        View fav
-      </Button>
-      <Button
-        className="back-to-recipes"
-        onClick={() => history.push("/fridger")}
-      >
-        View your items
-      </Button> */}
-      <br></br>
-      <br></br>
-      <Button
-        className="suggestions-button"
-        onClick={() => history.push("/suggestions")}
-      >
-        Personalised Recepes
-      </Button>
-      <br></br>
-      <br></br>
+      <div className="display-text">
+        <h1 className="header">Get Inspired</h1>
+        <div className="sub-header">
+          Browse through suggestions or search by ingredients
+        </div>
+      </div>
+
       <SearchForm user={user} setUser={setUser} />
-      {/* <Recipes recipes={this.state.recipes} user={user} /> */}
     </div>
   );
 };

@@ -38,7 +38,7 @@ function App({ history }) {
       />
       {user ? (
         <>
-          <Toolbar user={user} setUser={setUser} />
+          <Toolbar logout={logout} />
           <Route
             path="/recipes"
             render={routerProps => <Home user={user} setUser={setUser} />}

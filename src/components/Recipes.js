@@ -56,6 +56,7 @@ const Recipes = ({ recipes, user, setUser, showButton }) => {
         <Modal closeModal={() => setModal(false)}>
           <Recipe
             recipeId={recipeId}
+            recipeImage={`https://spoonacular.com/recipeImages/${recipeId}-480x360.jpg`}
             user={user}
             closeModalOnSave={() => setModal(false)}
             setUser={setUser}

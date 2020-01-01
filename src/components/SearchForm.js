@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from "react";
 import Recipes from "./Recipes";
 import Input from "./Input";
 import Button from "./Button.js";
@@ -6,6 +7,12 @@ import Button from "./Button.js";
 const SearchForm = ({ user, setUser }) => {
   const [recipes, setRecipes] = useState([]);
   const API_KEY = process.env.REACT_APP_API_KEY;
+
+  // useEffect(() => {
+  //   fetch(`https://api.spoonacular.com/recipes/random?number=10&${API_KEY}`)
+  //     .then(resp => resp.json())
+  //     .then(data => setRecipes(data.recipes));
+  // }, []);
 
   const getRecipe = e => {
     var ingredientName = e.target.elements.ingredient.value;
@@ -28,7 +35,7 @@ const SearchForm = ({ user, setUser }) => {
             placeholder="Blue cheese, broccoli"
           />
           <Button type="submit" className="form_button">
-            <i class="search icon"></i>
+            <i className="search icon"></i>
             Search Recipes
           </Button>
         </form>
