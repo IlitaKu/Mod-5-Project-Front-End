@@ -11,7 +11,6 @@ const API_ENDPOINT =
 const UserItems = ({ user, setUser }) => {
   let history = useHistory();
   const [ingredient, setIngredient] = useState(user.ingredients);
-  console.log("1111", ingredient);
   useEffect(() => {
     setUser({ ...user, ingredients: ingredient });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -32,9 +31,7 @@ const UserItems = ({ user, setUser }) => {
         return (
           <DisplayItems
             ingredient={item.name}
-            dates={moment(item.created_at)
-              // .startOf("minutes")
-              .fromNow()}
+            dates={moment(item.created_at).fromNow()}
             onClick={() => deleteItem(item.id)}
           />
         );
@@ -80,9 +77,13 @@ const UserItems = ({ user, setUser }) => {
   return (
     <div>
       <div className="display-text">
-        <h1 className="header">Get Inspired</h1>
+        <h1 className="header">Eat while good</h1>
         <div className="sub-header">
-          Browse through suggestions or search by ingredients
+          {/* Get recipe suggestions based on the food you have at home.<br></br>
+          Keep track of food you’ve got at home, even when you’re on the move. */}
+          Add the items to fridger section.<br></br>
+          Search for personalised recipes based on your fridger content, so the
+          question "what's for dinner?" is answered before it's even asked.
         </div>
       </div>
       <div className="ui search">
@@ -96,16 +97,18 @@ const UserItems = ({ user, setUser }) => {
           <Button type="submit" className="form_button">
             Add to fridger
           </Button>
-          <Button
-            className="suggestions-button"
-            onClick={() => history.push("/suggestions")}
-          >
-            Personalised Recepes
-          </Button>
         </form>
       </div>
 
       <ul className="ingredients_list card">{list}</ul>
+      <Button
+        id="personalised-recipe-button"
+        className="suggestions-button"
+        onClick={() => history.push("/suggestions")}
+      >
+        Personalised Recepes
+        <i class="fas fa-carrot"></i>
+      </Button>
     </div>
   );
 };

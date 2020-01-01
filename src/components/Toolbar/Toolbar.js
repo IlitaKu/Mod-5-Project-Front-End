@@ -1,43 +1,47 @@
 import React from "react";
-import API from "../../adapters/API";
+
 import { Link } from "react-router-dom";
-import Paths from "../../Paths";
-import Button from "../../components/Button";
-import { useHistory } from "react-router-dom";
+
+import { ReactComponent as Chef } from "../../assets/Chef.svg";
 
 const Toolbar = ({ logout }) => {
-  let history = useHistory();
   return (
     <header className="toolbar">
       <nav className="toolbar_navigation">
-        <div></div>
-        {/* <ul id="nav"> */}
-        <div className="toolbar-logo">
+        <div>
           <Link
             to={{
               pathname: `/recipes`
             }}
-            style={{ fontSize: 30, color: "green" }}
           >
-            Fridger
+            <Chef className="icon" />
+            <span className="toolbar-logo">Fridger</span>
           </Link>
         </div>
-        <Button
-          className="back-to-recipes"
-          onClick={() => history.push("/fridger")}
-        >
-          My Fridge
-        </Button>
-        <Button
-          className="back-to-recipes"
-          onClick={() => history.push("/favourites")}
-        >
-          Favs
-        </Button>
-        <Button className="toolbar-logout" onClick={() => logout()}>
-          Logout
-        </Button>
-        {/* </ul> */}
+        <div>
+          <Link
+            className="toolbar-section"
+            to={{
+              pathname: `/fridger`
+            }}
+          >
+            My Fridge
+          </Link>
+          <Link
+            className="toolbar-section"
+            to={{
+              pathname: `/favourites`
+            }}
+          >
+            Favs
+          </Link>
+          <button
+            className="toolbar-logout toolbar-section"
+            onClick={() => logout()}
+          >
+            Logout
+          </button>
+        </div>
       </nav>
     </header>
   );

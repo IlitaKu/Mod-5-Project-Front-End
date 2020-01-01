@@ -33,10 +33,8 @@ const FavRecipes = ({ user, setUser }) => {
   return (
     <div>
       <div className="display-text">
-        <h1 className="header">Get Inspired</h1>
-        <div className="sub-header">
-          Browse through suggestions or search by ingredients
-        </div>
+        <h1 className="header">Your fave recipes</h1>
+        <div className="sub-header">Enjoy them again and again</div>
       </div>
       {favRecipes.length > 0 ? (
         <Recipes
@@ -46,7 +44,10 @@ const FavRecipes = ({ user, setUser }) => {
           setUser={setUser}
         />
       ) : (
-        <div>No Recipes added yet</div>
+        <div>
+          No Recipes added yet, click "Add to favs" while browsing recipes to
+          see them here{" "}
+        </div>
       )}
     </div>
   );
