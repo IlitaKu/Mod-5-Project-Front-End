@@ -11,14 +11,14 @@ const AuthPages = props => {
   return (
     <div className="landing">
       <Button
-        className="recipe_button"
+        className="login-buttons"
         onClick={() => setModal({ signUp: false, login: true })}
       >
         Login
       </Button>
 
       <Button
-        className="recipe_button"
+        className="login-buttons"
         onClick={() => setModal({ signUp: true, login: false })}
       >
         SignUp

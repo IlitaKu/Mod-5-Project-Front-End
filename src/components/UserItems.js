@@ -80,28 +80,25 @@ const UserItems = ({ user, setUser }) => {
       </div>
       <div className="ui search">
         <form onSubmit={saveIngredient}>
-          <Input
-            className="prompt"
-            type="text"
-            name="fridgerItems"
-            placeholder="Fridger item"
-          />
+          <Input type="text" name="fridgerItems" placeholder="Fridger item" />
           <Button type="submit" className="form_button">
             <i class="plus circle icon"></i>
             Add to fridger
           </Button>
         </form>
       </div>
-
-      <ul className="ingredients_list card">{list}</ul>
+      <div className="ingredients_list_wrapper">
+        <ul className="ingredients_list card">{list}</ul>
+      </div>
       {ingredient.length > 0 && (
         <Button
-          id="personalised-recipe-button"
           className="suggestions-button"
           onClick={() => history.push("/suggestions")}
         >
-          <i class="fas fa-carrot"></i>
-          Personalised Recepes
+          <div className="suggestions-button-text">
+            <i class="fas fa-carrot"></i>
+            <span>Personalised Recepes</span>
+          </div>
         </Button>
       )}
     </div>

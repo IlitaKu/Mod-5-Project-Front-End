@@ -29,7 +29,6 @@ const SearchForm = ({ user, setUser }) => {
       <div className="ui search">
         <form onSubmit={getRecipe}>
           <Input
-            className="prompt"
             type="text"
             name="ingredient"
             placeholder="Blue cheese, broccoli"
