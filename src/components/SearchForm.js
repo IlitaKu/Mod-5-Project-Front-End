@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Recipes from "./Recipes";
 import Input from "./Input";
 import Button from "./Button.js";
@@ -8,11 +8,11 @@ const SearchForm = ({ user, setUser }) => {
   const [recipes, setRecipes] = useState([]);
   const API_KEY = process.env.REACT_APP_API_KEY;
 
-  // useEffect(() => {
-  //   fetch(`https://api.spoonacular.com/recipes/random?number=10&${API_KEY}`)
-  //     .then(resp => resp.json())
-  //     .then(data => setRecipes(data.recipes));
-  // }, []);
+  useEffect(() => {
+    fetch(`https://api.spoonacular.com/recipes/search?query=oats&${API_KEY}`)
+      .then(resp => resp.json())
+      .then(data => setRecipes(data.results));
+  }, []);
 
   const getRecipe = e => {
     var ingredientName = e.target.elements.ingredient.value;
