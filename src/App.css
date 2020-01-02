@@ -11,7 +11,7 @@ html {
   text-align: center;
   /* Full height */
   height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Anonymous Pro", monospace;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -32,6 +32,16 @@ html {
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .about {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 736px) {
+  .about {
+    width: 100%;
   }
 }
 
@@ -94,7 +104,7 @@ html {
   transition: opacity 0.1s ease-out;
   border-color: 0.1s ease-out;
   background-color: 0.1s ease-out;
-
+  font-family: "Anonymous Pro", monospace;
   height: 48px;
   width: 192px;
   font-size: 16px;
@@ -277,6 +287,7 @@ html {
   font-size: 16px;
   appearance: none;
   background-color: #ffffff;
+  font-family: "Anonymous Pro", monospace;
 }
 
 .input_field:focus {
@@ -336,10 +347,11 @@ html {
   padding-right: 48px;
 }
 .toolbar-logo {
-  font-family: sans-serif;
+  font-family: "Anonymous Pro", monospace;
   font-size: 30px;
   color: #57b35e;
   padding-left: 6px;
+  font-family: "Anonymous Pro", monospace;
 }
 .toolbar-logo:hover {
   color: #57b35e;
@@ -416,6 +428,7 @@ html {
 .header {
   padding-left: 32px;
   padding-right: 32px;
+  font-family: "Anonymous Pro", monospace;
 }
 .sub-header {
   padding-left: 32px;
@@ -425,7 +438,7 @@ html {
 
 .about {
   margin: auto;
-  width: 60%;
+  width: 50%;
   padding: 64px;
 }
 .suggestions-button {
@@ -460,4 +473,12 @@ i.icon {
 }
 .login-buttons {
   margin: 6px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Anonymous Pro", monospace;
 }
