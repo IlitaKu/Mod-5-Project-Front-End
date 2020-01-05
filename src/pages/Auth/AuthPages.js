@@ -7,7 +7,6 @@ import Button from "../../components/Button";
 
 const AuthPages = props => {
   const [isModalOpen, setModal] = useState({ login: false, signUp: false });
-  console.log(props);
   return (
     <div className="landing">
       <Button

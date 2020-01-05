@@ -31,7 +31,7 @@ const SearchForm = ({ user, setUser }) => {
           <Input
             type="text"
             name="ingredient"
-            placeholder="Blue cheese, broccoli"
+            placeholder="Blue cheese broccoli"
           />
           <Button type="submit" className="form_button">
             <i className="search icon"></i>

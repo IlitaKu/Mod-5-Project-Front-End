@@ -40,7 +40,6 @@ const signup = userDetails => {
   })
     .then(jsonfy)
     .then(data => {
-      console.log(data);
       localStorage.setItem("token", data.token);
       return data.user;
     });
@@ -54,7 +53,6 @@ const validate = () => {
   })
     .then(jsonfy)
     .then(data => {
-      console.log(data);
       localStorage.setItem("token", data.token);
       return data.user;
     });

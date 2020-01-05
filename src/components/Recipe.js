@@ -13,7 +13,7 @@ class Recipe extends React.Component {
   componentDidMount = async () => {
     const user = this.props.user;
     const id = this.props.recipeId;
-    console.log(id);
+
     const req = await fetch(
       `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&${API_KEY}`
     );
@@ -56,15 +56,12 @@ class Recipe extends React.Component {
         .then(data => setUser(newUser));
       // update the user after recepe been saved
     };
-
-    console.log("1", this.state.shownRecipe);
     const recipe = this.state.shownRecipe;
 
     // const ingredients = recipe.extendedIngredients.map(i => i.name);
     // const amount = recipe.extendedIngredients.map(i => i.amount);
     // const unit = recipe.extendedIngredients.map(i => i.unit);
     // const ingredientImage = recipe.extendedIngredients.map(i => i.image);
-    console.log(showButton);
     return (
       <div className="recipe-card">
         {this.state.shownRecipe.length !== 0 && (

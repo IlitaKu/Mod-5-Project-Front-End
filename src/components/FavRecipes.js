@@ -12,7 +12,6 @@ const FavRecipes = ({ user, setUser }) => {
     const faveRecipiesIds = user.user_recipes.map(user => user.spoonacular_id);
     const uniqArr = [...new Set(faveRecipiesIds)];
     const callIds = uniqArr.join(",");
-    console.log(callIds);
     fetch(
       `https://api.spoonacular.com/recipes/informationBulk?ids=${callIds}&${API_KEY}`
     )

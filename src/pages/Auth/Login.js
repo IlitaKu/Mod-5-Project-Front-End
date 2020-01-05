@@ -40,13 +40,11 @@ const Login = props => {
     if (isInputValid) {
       API.login({ email, password })
         .then(user => {
-          console.log(" 2 login component", user);
           props.setUser(user);
           history.push("/recipes");
         })
 
         .catch(error => {
-          console.log(errors);
           setErrors({ ...errors, generic: error.statusText });
         });
     }

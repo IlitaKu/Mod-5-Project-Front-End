@@ -56,13 +56,11 @@ const SignUp = props => {
     if (isImputValid) {
       API.signup({ email, password, name })
         .then(user => {
-          console.log(user);
           props.setUser(user);
           history.push("/recipes");
         })
 
         .catch(error => {
-          console.log(error);
           setErrors({ ...errors, generic: error.statusText });
         });
     }
