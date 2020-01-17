@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./Button.js";
 const API_KEY = process.env.REACT_APP_API_KEY;
 const API_ENDPOINT =
-  process.env.REACT_APP_API_ENDPOINT || "http://localhost:3000/api/v1";
+  process.env.REACT_APP_API_ENDPOINT || "http://localhost:3000/api/v1/";
 class Recipe extends React.Component {
   state = {
     shownRecipe: [],
