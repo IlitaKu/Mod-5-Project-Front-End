@@ -18,7 +18,7 @@
     "react-scripts": "3.3.0",
     "semantic-ui-react": "^0.88.2",
     "typescript": "^3.7.4",
-    "yarn": "^1.21.1"
+    "yarn": "^1.22.0"
   },
   "scripts": {
     "start": "react-scripts start",
